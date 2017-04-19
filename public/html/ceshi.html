@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../javascripts/jquery.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			$.ajax({
+				type:"post",
+				url:"http://localhost:3000/user/register",
+				data:{
+					username: "小明",
+					password: "lxm123",
+					name: "李小明",
+					tel: "15044509022",
+					qq: "1161071902",
+					email: "1161071902@qq.com",
+					level: "0"
+				},
+				success: function(data) {
+					console.log(data)
+				}
+			});
+		</script>
+	</body>
+</html>
