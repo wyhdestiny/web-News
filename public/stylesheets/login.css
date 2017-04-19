@@ -1,7 +1,163 @@
+body{
+	overflow: hidden;
+}
 .wyh_conent{
 	width:100%;
-	height:28rem;
+	height:29rem;
 	background: url(../images/login_bg3.jpg) no-repeat;
 	position: relative;
 	background-size: 100% 100%;
+}
+.wyh_logo{
+	width:100%;
+	height:5rem;
+	background: blanchedalmond;
+	position: absolute;
+	top:11%;
+}
+.wyh_log{
+	width:100%;
+	height:8rem;
+	background: red;
+	position: absolute;
+	top:35%;
+	/*margin:0 auto;*/
+	/*left:9%;
+	right:9%;*/
+	
+	/*text-align: center;*/
+}
+.wyh_user {
+	width:8.5rem;
+	height:1.5rem;
+}
+.wyh_pass {
+	width:8.5rem;
+	height:1.5rem;
+}
+.wyh_yan {
+	width:8.5rem;
+	height:1.5rem;
+}
+.log_a{
+	width:100%;
+	/*padding:0 20% 0 20%;*/
+	/*float: left;*/
+	text-align: center;	
+	margin:0 auto;
+	width:12rem;
+	height:1.5rem;
+	background: greenyellow;
+}
+.log_b{
+	width:100%;
+	
+	text-align: center;	
+	margin:0 auto;
+	width:12rem;
+	height:1.5rem;
+	margin-top:0.5rem;
+	/*background: greenyellow;*/
+	/*width:100%;*/
+	/*padding:0 10% 0 10%;*/
+	/*float: left;*/
+	/*text-align: center;*/	
+}
+.log_c{
+	width:100%;
+	text-align: center;	
+	margin:0 auto;
+	width:12rem;
+	height:1.5rem;
+	margin-top:0.5rem;
+	/*background: greenyellow;*/
+	/*width:100%;*/
+	/*padding:0 10% 0 10%;*/
+	/*float: left;*/
+	/*text-align: center;*/	
+}
+.log_d{
+	width:100%;
+	text-align: center;	
+	margin:0 auto;
+	width:12rem;
+	height:1.5rem;
+	margin-top:0.5rem;
+	/*background: greenyellow;*/
+	/*width:100%;*/
+	/*padding:0 10% 0 10%;*/
+	/*float: left;*/
+	/*text-align: center;*/	
+}
+.wyh_p{
+	line-height:1.5rem;
+	height:1.5rem;
+	width:auto;
+	padding:0 0.3rem 0 0.3rem;
+	font-size: 0.7rem;
+	font-family: "微软雅黑";
+	
+	color:white;
+}
+.wyh_yzm{
+	line-height:1.5rem;
+	height:1.5rem;
+	width:auto;
+	padding:0 0 0 0.3rem;
+	font-size: 0.5rem;
+	font-family: "微软雅黑";
+	/*background: gold;*/
+	margin-left:1rem;
+	/*color:white;*/
+	margin-right:0;
+}
+.wyh_a{
+	text-decoration: underline;
+	color:#333;
+	/*background: greenyellow;*/
+}
+.wyh_code{
+	font-family: Arial;
+	font-style: italic;
+	font-weight: bold;
+	border: 0;
+	/*letter-spacing: 2px;*/
+	color: blue;
+	width:4rem;
+	height:1.4rem;
+	background: gray;
+	margin-left:0;
+	/*background: blanchedalmond;*/
+}
+/*.wyh_log .wyh_p{
+	float: left;
+}
+.wyh_log input{
+	float: left;
+}*/
+.log_e{
+	width:100%;
+	text-align: center;	
+	margin:0 auto;
+	/*width:12rem;*/
+	height:1.5rem;
+	margin-top:2.5rem;
+	/*background: greenyellow;*/
+	/*width:100%;*/
+	/*padding:0 10% 0 10%;*/
+	/*float: left;*/
+	/*text-align: center;*/	
+}
+.wyh_dengL{
+	width: calc(100% - 70%);
+	height:2rem;
+	font-size: 0.8rem;
+	font-family: "blackadder itc";
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.5rem;
+	/*margin-left: 36%;
+	margin-top:12%;*/
+	color:white;
+	text-shadow: 3px 0px 0px #000;
 }
