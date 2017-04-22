@@ -4,160 +4,276 @@ body{
 .wyh_conent{
 	width:100%;
 	height:29rem;
-	background: url(../images/login_bg3.jpg) no-repeat;
+	background: url(../images/login_12.jpeg) no-repeat;
 	position: relative;
 	background-size: 100% 100%;
 }
 .wyh_logo{
 	width:100%;
 	height:5rem;
-	background: blanchedalmond;
+	/*background: blanchedalmond;*/
 	position: absolute;
 	top:11%;
+	
+}
+.wyh_logo img{
+	width:5rem;
+	height:5rem;
+	display: block;
+	margin:0 auto;
+	/*text-align: center;*/
 }
 .wyh_log{
 	width:100%;
-	height:8rem;
-	background: red;
+	height:9rem;
+	/*background: red;*/
 	position: absolute;
+	/*background: rgba(0,0,0,0.7);*/
 	top:35%;
 	/*margin:0 auto;*/
 	/*left:9%;
 	right:9%;*/
-	
 	/*text-align: center;*/
 }
 .wyh_user {
 	width:8.5rem;
-	height:1.5rem;
+	height:2.5rem;
+	background: none;
+	border:none;
+	outline: none;
 }
-.wyh_pass {
+.wyh_user::-webkit-input-placeholder{
+    color: black;opacity:0.6;
+    font-size: 0.7rem;
+}
+.wyh_pass{
 	width:8.5rem;
-	height:1.5rem;
+	height:2.5rem;
+	background: none;
+	/*background: rgba(255,255,255,0.8);*/
+	border:none;
+	outline: none;
 }
-.wyh_yan {
+.wyh_pass::-webkit-input-placeholder{
+    color: black;opacity:0.6;
+    font-size: 0.7rem;
+}
+.wyh_code::-webkit-input-placeholder{
+    color: black;opacity:0.6;
+    font-size: 0.7rem;
+}
+/*.wyh_yan {
 	width:8.5rem;
-	height:1.5rem;
-}
+	height:2.5rem;
+	background: none;
+	border:none;
+	outline: none;
+}*/
 .log_a{
 	width:100%;
+	border-radius: 0.3rem;
 	/*padding:0 20% 0 20%;*/
 	/*float: left;*/
 	text-align: center;	
+	background: rgba(255,255,255,0.8);
 	margin:0 auto;
+	padding-left:0.5rem;
 	width:12rem;
-	height:1.5rem;
-	background: greenyellow;
+	height:2.5rem;
+	color:lightblue;
+	border-bottom:white solid 0.05rem;
+	/*background: greenyellow;*/
 }
 .log_b{
 	width:100%;
-	
+	border-radius: 0.3rem;
+	border-bottom:white solid 0.05rem;
+	background: rgba(255,255,255,0.8);
 	text-align: center;	
 	margin:0 auto;
 	width:12rem;
-	height:1.5rem;
-	margin-top:0.5rem;
+	padding-left:0.5rem;
+	height:2.5rem;
+	margin-top:0.8rem;
 	/*background: greenyellow;*/
 	/*width:100%;*/
 	/*padding:0 10% 0 10%;*/
 	/*float: left;*/
 	/*text-align: center;*/	
 }
-.log_c{
-	width:100%;
-	text-align: center;	
-	margin:0 auto;
-	width:12rem;
-	height:1.5rem;
-	margin-top:0.5rem;
-	/*background: greenyellow;*/
-	/*width:100%;*/
-	/*padding:0 10% 0 10%;*/
-	/*float: left;*/
-	/*text-align: center;*/	
-}
-.log_d{
-	width:100%;
-	text-align: center;	
-	margin:0 auto;
-	width:12rem;
-	height:1.5rem;
-	margin-top:0.5rem;
-	/*background: greenyellow;*/
-	/*width:100%;*/
-	/*padding:0 10% 0 10%;*/
-	/*float: left;*/
-	/*text-align: center;*/	
-}
+
+
 .wyh_p{
-	line-height:1.5rem;
-	height:1.5rem;
+	line-height:2.8rem;
+	height:2.5rem;
 	width:auto;
 	padding:0 0.3rem 0 0.3rem;
 	font-size: 0.7rem;
 	font-family: "微软雅黑";
-	
-	color:white;
+	font-size: 1.1rem;
+	color:black;
+	text-align: center;
+	/*padding-left:0.3rem;*/
+}
+.wyh_p > span{
+	width:1.5rem;
+	/*height:2.5rem;*/
+	text-align: center;
+	/*display:block;*/
 }
 .wyh_yzm{
 	line-height:1.5rem;
-	height:1.5rem;
+	height:2rem;
 	width:auto;
 	padding:0 0 0 0.3rem;
-	font-size: 0.5rem;
+	font-size: 0.6rem;
 	font-family: "微软雅黑";
 	/*background: gold;*/
 	margin-left:1rem;
 	/*color:white;*/
 	margin-right:0;
-}
-.wyh_a{
+	color:dodgerblue;
 	text-decoration: underline;
-	color:#333;
-	/*background: greenyellow;*/
+	-moz-text-decoration-color: dodgerblue;
 }
-.wyh_code{
-	font-family: Arial;
-	font-style: italic;
-	font-weight: bold;
-	border: 0;
-	/*letter-spacing: 2px;*/
-	color: blue;
-	width:4rem;
-	height:1.4rem;
-	background: gray;
-	margin-left:0;
-	/*background: blanchedalmond;*/
-}
+
+
 /*.wyh_log .wyh_p{
 	float: left;
 }
 .wyh_log input{
 	float: left;
 }*/
-.log_e{
+
+.log_c{
 	width:100%;
+	border-radius: 0.3rem;
+	border-bottom:white solid 0.05rem;
+	background: rgba(255,255,255,0.8);
 	text-align: center;	
 	margin:0 auto;
-	/*width:12rem;*/
+	width:12rem;
+	padding-left:0.5rem;
+	height:2.5rem;
+	margin-top:0.8rem;
+	/*background: greenyellow;*/
+}
+
+.wyh_code{
+	width:6rem;
+	height:2.5rem;
+	background: none;
+	/*background: rgba(255,255,255,0.8);*/
+	border:none;
+	outline: none;
+}
+.yu_codeImg{
+	width:3rem;
+	height:1.7rem;
+	margin-top:0.4rem;
+	font-family: Arial;
+	font-style: italic;
+	font-weight: bold;
+	letter-spacing: 2px;
+	line-height: 1.7rem;
+	font-size: 0.7rem;
+	/*border: 1px solid black;*/
+	background: url(../images/login_yanzheng.jpg) no-repeat;
+	/*background: chartreuse;*/
+	background-size: 100% 100%;
+	/*position: absolute;*/
+	left:8.4rem
+}
+.yu_codeTxt{
+	width:auto;
+	height:1.7rem;
+	line-height:1.7rem;
+	/*background: red;*/
+	margin-right:1rem;
+	color:blue;
+	text-decoration: underline;
+	text-decoration-color: blue;
+}
+/*.yu_codeInp{
+	width:5rem;
 	height:1.5rem;
-	margin-top:2.5rem;
+	position: absolute;
+	display: block;
+	top:7rem;
+	border:none;
+	background:rgba(255,255,255,0.8) ;
+}
+.yu_codeImg{
+	width:4rem;
+	height:1.5rem;
+	background: chartreuse;
+	position: absolute;
+	left:8.4rem
+}
+.yu_codeClik{
+	width:5rem;
+	height:0.8rem;
+	position: absolute;
+	top:8.3rem;
+	left:8rem;
+	color:blue;
+	text-decoration: underline;
+	text-decoration-color:blue;
+	
+}*/
+
+
+
+.log_e{
+	width:75%;
+	/*background: red;*/
+	/*position: absolute;*/
+	
+	/*text-align: center;*/	
+	margin:0 auto;
+	/*width:12rem;*/
+	height:2rem;
+	margin-top:2rem;
+	position: relative;
+	/*background: red;*/
 	/*background: greenyellow;*/
 	/*width:100%;*/
 	/*padding:0 10% 0 10%;*/
 	/*float: left;*/
 	/*text-align: center;*/	
 }
+
 .wyh_dengL{
-	width: calc(100% - 70%);
+	width: calc(100% - 55%);
 	height:2rem;
 	font-size: 0.8rem;
 	font-family: "blackadder itc";
 	font-weight: bold;
 	text-align: center;
 	line-height: 1.5rem;
+	margin:0 auto;
 	/*margin-left: 36%;
 	margin-top:12%;*/
 	color:white;
-	text-shadow: 3px 0px 0px #000;
+	margin-right:0.5rem;
+	float: left;
+	/*text-shadow: 3px 0px 0px #000;*/
 }
+.wyh_zhuce{
+	width: calc(100% - 55%);
+	height:2rem;
+	font-size: 0.8rem;
+	font-family: "blackadder itc";
+	font-weight: bold;
+	text-align: center;
+	line-height: 2rem;
+	margin:0 auto;
+	/*margin-left: 36%;
+	margin-top:12%;*/
+	color:white;
+	margin-left: 0.6rem;
+	border-radius: 0.2rem;
+	float: left;
+	background:#989898 ;
+}
+
