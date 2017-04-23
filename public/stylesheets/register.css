@@ -4,8 +4,9 @@ body{
 .wyh_wrap{
 	width:100%;
 	height:29rem; 
-	background: rgba(0,0,0,0.8);
-	/*background: url(../images/login_12.jpeg) no-repeat;*/
+	/*background: #E3E3E3;*/
+	/*background: rgba(0,0,0,0.8);*/
+	background: url(../images/login_12.jpeg) no-repeat;
 	background-size: 100% 100%;
 }
 .yu_tilte{
@@ -95,6 +96,7 @@ body{
 	margin-top:0.3rem;
 	border:none;
 	outline: none;
+	color:white;
 	/*border:none;*/
 	/*outline: none;*/
 }
@@ -105,6 +107,7 @@ body{
 	/*background: rgba(255,255,255,0.8);*/
 	text-align: center;	
 	margin:0 auto;
+	/*color:white;*/
 	/*width:12rem;*/
 	padding-left:0.3rem;
 	height:2rem;
@@ -131,6 +134,7 @@ body{
 	margin-top:0.3rem;
 	border:none;
 	outline: none;
+	color:white;
 	/*border:none;*/
 	/*outline: none;*/
 }
@@ -164,6 +168,7 @@ body{
 	height:1.5rem;
 	background: none;
 	margin-top:0.3rem;
+	color:white;
 	border:none;
 	outline: none;
 	/*border:none;*/
@@ -201,6 +206,7 @@ body{
 	margin-top:0.3rem;
 	border:none;
 	outline: none;
+	color:white;
 	/*border:none;*/
 	/*outline: none;*/
 }
@@ -235,6 +241,7 @@ body{
 	height:1.5rem;
 	background: none;
 	margin-top:0.3rem;
+	color:white;
 	border:none;
 	outline: none;
 	/*border:none;*/
@@ -268,6 +275,7 @@ body{
 .yh_name{
 	width:8.5rem;
 	height:1.5rem;
+	color:white;
 	background: none;
 	margin-top:0.3rem;
 	border:none;
@@ -302,6 +310,7 @@ body{
 	/*background: gold;*/
 }
 .yh_qq{
+	color:white;
 	width:8.5rem;
 	height:1.5rem;
 	background: none;
@@ -330,4 +339,60 @@ body{
 	height:2rem;
 	display: block;
 	font-size: 0.8rem;
+}
+.yu_tanmm{
+	width:7rem;
+	height:1rem;
+	line-height: 1rem;
+	/*background: chocolate;*/
+	color:white;
+	z-index: 999;
+	position: absolute;
+	top:6.4rem;
+	right:0;
+	display: none;
+}
+.yu_tanremm{
+	width:7rem;
+	height:1rem;
+	line-height: 1rem;
+	background: chocolate;
+	color:white;
+	z-index: 999;
+	position: absolute;
+	top:9.2rem;
+	right:0;
+}
+.yu_tantel{
+	width:7rem;
+	height:1rem;
+	line-height: 1rem;
+	background: chocolate;
+	color:white;
+	z-index: 999;
+	position: absolute;
+	top:11.9rem;
+	right:0;
+}
+.yu_taneml{
+	width:7rem;
+	height:1rem;
+	line-height: 1rem;
+	background: chocolate;
+	color:white;
+	z-index: 999;
+	position: absolute;
+	top:14.7rem;
+	right:0;
+}
+.yu_tanqq{
+	width:7rem;
+	height:1rem;
+	line-height: 1rem;
+	background: chocolate;
+	color:white;
+	z-index: 999;
+	position: absolute;
+	top:20.3rem;
+	right:0;
 }

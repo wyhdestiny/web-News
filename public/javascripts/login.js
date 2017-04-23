@@ -18,30 +18,31 @@ $(document).ready(function(){
 				wyh_code = ' ';
 				createCode();
 			}else{
-				console.log("全都正确！")
-				/*$.ajax({
+//				console.log("全都正确！")
+				$.ajax({
 					type:"post",
-					url:"http://localhost:8005/ness/new", //ness是在app.js中app.use('/ness',neww); 
-						data:{
-							username:userVal,
-							password: MD5(pwdVal),
-							tel:telVal,
-							email:emlVal
-						},
+					url:"http://192.168.43.4:3000/user/login", //ness是在app.js中app.use('/ness',neww); 
+					data:{
+						username:userVal,
+						password: pwdVal,
+					},
 					async:true,
 					success:function(e){
 						console.log(e);
-						if(e.flag==1){
-							alert("注册成功！");
-							$("#user,#pwd,#tel,#eml,#InplVal").val('');
-						}else if(e.flag==2){
-							alert("该用户名已注册！");
-						}else if(e.flag==3){
-							alert("注册失败！");
+						console.log(e.result[0].uid);
+						if(e.success==1){
+							alert("登录成功！");
+							sessionStorage.uid=e.result[0].uid;
+						}else if(e.success==2){
+							alert("用户名不存在！"); 
+						}else if(e.success==3){
+							alert("用户名和密码不匹配！"); 
+						}else{
+							alert("登陆失败！");
 						}
-						sessionStorage.setItem("password", MD5(pwdVal));
+//						sessionStorage.setItem("password", MD5(pwdVal));
 					}
-				});*/
+				});
 			}
 	    }
 		
@@ -50,7 +51,10 @@ $(document).ready(function(){
 		
 		
 	})
-	
+	$("#wyh_zhuce").click(function(){
+		alert(1)
+		location.href="html/register.html";
+	})
 
 	createCode();
 	function createCode() {
