@@ -6,15 +6,44 @@
 		<title>Login</title>
 		<script src="javascripts/angular.js"></script>
 		<script src="javascripts/jquery.js"></script>
-		<script src="javascripts/bootstrap.js"></script>
+		<script src="stylesheets/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="javascripts/login.js"></script>
 		<script src="javascripts/rem.js"></script>
-		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="stylesheets/login.css"/>
 	</head>
 	<body>
 		<div class="wyh_conent">
+				<!--logo-->
+			<div class="wyh_logo">
+				<!--登录-->
+				<!--<img src="images/login_logo.png"/>-->
+			</div>
+			<div class="wyh_log">
+				<div class="log_a">
+					<div class="wyh_p fl" ><span class="glyphicon glyphicon-user">&nbsp;</span></div>
+					<input type="text" id="wyh_uname" class=" wyh_user form-control  fl" placeholder="请输入用户名">
+				</div>
+				
+				<div class="log_b">
+					<div class="wyh_p fl"><span class="glyphicon glyphicon-lock">&nbsp;</span></div>
+					<input type="text" id="wyh_pwd" class="wyh_pass form-control  fl" placeholder="请输入密码">
+				</div>
+				
+				
+				<div class="log_c">
+					<div class="wyh_p fl"><span class="glyphicon glyphicon-floppy-saved">&nbsp;</span></div>
+					<input type="text" id="wyh_code" class="wyh_code  form-control  fl" placeholder="请输入验证码">
+					<div class="yu_codeImg fl"></div>
+				</div>
+				<p class="yu_codeTxt fr" id="yu_codeTxt">看不清，点击换图片</p>
+				
+				<div class="log_e">
+					<button class="wyh_dengL btn btn-info" id="loading">登 录</button>
+					<div id="register" class="wyh_zhuce" id="wyh_zhuce">注 册</div>
+				</div>
+			</div>
 			
 		</div>
 	</body>
