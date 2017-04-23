@@ -1,0 +1,155 @@
+.lhqPersonMsg-header{
+	width: 100%;
+	height: 8rem;
+	overflow: hidden;
+	background: url(../images/lhqPersonMsg.jpg.jpg) no-repeat;
+	background-size:100% 100% ;
+	border-bottom: 1px solid #737373;
+	margin-top: 2rem;
+}
+.lhqPersonMsg-header>span{
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-top: 1.2rem;
+}
+.lhqPersonMsg-header>span>img{
+
+}
+.lhqPersonMsg-header>p{
+	width: 100%;
+	height: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+	line-height: 1.7rem;
+	font-size: 0.7rem;
+	letter-spacing: 2px;
+}
+
+.lhqPersonMsg-top{
+	width: 100%;
+	height:2rem;
+	background: #24292E;
+	position: fixed;
+	top: 0;
+	left: 0;
+	
+}
+.lhqPersonMsg-top>a>span{
+	color: #FFFFFF;
+	font-size: 0.8rem;
+	width: 2rem;
+	height: 2rem;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 2rem;
+}
+.lhqPersonMsg-top>p{
+	color: #FFFFFF;
+	font-size: 0.7rem;
+	letter-spacing: 2px;
+	width: 5rem;
+	height: 2rem;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 2rem;
+	font-weight: 600;
+	margin-left: 3.2rem;
+}
+.lhqPersonMsg-top>a>i{
+	width: 2rem;
+	height: 2rem;
+	float: right;
+	font-style: normal;
+	color: #FFFFFF;
+	display: block;
+	margin-right: 0.3rem;
+	line-height: 2rem;
+	text-align: center;
+	font-size: 0.6rem;
+	/*font-weight: 600;*/
+	letter-spacing: 2px;
+}
+
+.lhq-center{
+	width: 100%;
+	height: 7rem;
+	overflow: hidden;
+}
+
+.lhq-center>a{
+	width: 94%;
+	height: 1.7rem;
+	 background: -webkit-linear-gradient(left,#545659, #BCBDBE);
+ 	 background: -o-linear-gradient(left,#545659, #BCBDBE);
+ 	 background: -moz-linear-gradient(left,#545659,#BCBDBE);
+ 	 background: linear-gradient(left,#545659, #BCBDBE);
+	display: block;
+	margin: 0 auto;
+	text-decoration: none;
+	color: #FFFFFF;
+	border-radius:0.5rem;
+	margin-top: 0.5rem;
+	
+}
+.lhq-center>a>p{
+	width: 100%;
+	height:1.7rem;
+	position: relative;
+
+}
+.lhq-center>a>p>span:nth-child(1){
+	width: 3rem;
+	height: 1.7rem;
+	text-align: center;
+	line-height: 1.7rem;
+	font-size: 0.65rem;
+	position: absolute;
+	left: 0.3rem;
+	top: 0;
+	
+}
+.lhq-center>a>p>span:nth-child(2){
+	width: 2rem;
+	height: 1.7rem;
+	text-align: center;
+	line-height: 1.7rem;
+	font-size: 0.65rem;
+	position: absolute;
+	left: 77%;
+	top: 0;
+	color: #000000;
+	font-weight: 600;
+}
+.lhq-center>a>p>span:nth-child(3){
+	width: 1rem;
+	height: 1.7rem;
+	text-align: center;
+	line-height: 1.7rem;
+	font-size: 0.8rem;
+	position: absolute;
+	right: 3%;
+	top: 0;
+	color: #000000;
+	font-weight: 600;
+	
+}
+.lhq-button{
+	width: 94%;
+	height: 2rem;
+	border-radius:0.6rem;
+	text-align: center;
+	line-height: 2rem;
+	font-size: 0.7rem;
+	font-weight: 600;
+	background: #24292E;
+	color: #FFFFFF;
+	cursor: pointer;
+	position: fixed;
+	bottom: 2rem;
+	left: 3%;
+}
