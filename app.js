@@ -9,7 +9,8 @@ var index = require('./routes/index');
 var users = require('./routes/users');
 //登陆+注册
 var login = require('./routes/login');
-
+//获取列表
+var newlist = require('./routes/newlist')
 
 var app = express();
 
@@ -29,6 +30,8 @@ app.use('/', index);
 app.use('/users', users);
 //登陆+注册
 app.use('/user',login);
+//获取列表
+app.use('/newlist',newlist);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
