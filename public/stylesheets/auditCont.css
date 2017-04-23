@@ -1,0 +1,137 @@
+
+.wyh_detail{
+	width:100%;
+	height:29rem;
+	
+}
+.yu_detilte{
+	width:100%;
+	height:2rem;
+	margin:0 auto;
+	color:white;
+	border-bottom:1px solid black;
+	z-index: 9999;
+	position: fixed;
+	top:0;
+	/*left:2.5%;
+	right:2.5%;*/
+	background: black;
+	/*background: red;*/
+	/*border-bottom:1px solid #525762;*/
+}
+
+.yh_detxt{
+	text-align: center;
+	font-size:1rem;
+	line-height: 2rem;
+	/*position: relative;*/
+}
+.yh_defh{
+	width: 0.475rem;
+	height: 0.825rem;
+	display: white;
+	position: absolute;
+	top: 0.4625rem;
+	left: 0.6rem;
+}
+.yh_defh:before{
+	width:0.6rem;
+	height:0.15rem;
+	background: white;
+	/*background: #525762;*/
+	content: "";
+	position: absolute;
+	top:0.16rem;
+	left:0;
+	transform-origin: center center;
+	transform: rotate(-45deg);
+}
+.yh_defh:after{
+	width:0.6rem;
+	height:0.15rem;
+	/*background: #525762;*/
+	background: white;
+	content: "";
+	position: absolute;
+	top:0.5rem;
+	left:0rem;
+	transform-origin: center center;
+	transform: rotate(45deg);
+}
+.yu_debody{
+	width:95%;
+	height:auto;
+	/*background: hotpink;*/
+	margin:3rem auto 0;
+	
+	
+}
+.txt_tit{
+	width:auto;
+	height:auto;
+	line-height: 1.3rem;
+	/*background: greenyellow;*/
+	text-align: center;
+	font-size: 1.1rem;
+	margin-top:1rem;
+	/*border-bottom:0.2rem solid black;*/
+}
+.yu_autor{
+	width:auto;
+	height:auto;
+	line-height: 0.9rem;
+	line-height: 0.9rem;
+	/*background: red;*/
+	text-align: center;
+	margin-top:0.5rem;
+	font-size: 0.65rem;
+}
+.yu_cont{
+	height:auto;
+	width:auto;
+	/*background: greenyellow;*/
+	line-height: 1.1rem;
+	font-size: 0.7rem;
+	margin-top:0.8rem;
+}
+.auditFoot{
+	width:100%;
+	height:2rem;
+	/*background: gold;*/
+	margin:0 auto;
+	text-align: center;
+}
+.no_pass{
+	margin-right:0.5rem;
+	width:7rem;
+	height:1.8rem;
+}
+.yes_pass{
+	margin-right:0.5rem;
+	width:7rem;
+	height:1.8rem;
+}
+.aud_tim{
+	width:100%;
+	height:2rem;
+	margin:0 auto;
+	/*border-top:0.03rem solid gray;*/
+	/*background: chartreuse;*/
+}
+.yu_tti{
+	width:auto;
+	height:2rem;
+	/*background: gold;*/
+	/*padding:0 0.1rem;*/
+	line-height: 2.3rem;
+	font-size: 0.6rem;
+}
+.yu_time{
+	width:auto;
+	height:2rem;
+	/*background: gold;*/
+	/*padding:0 0.3rem;*/
+	line-height: 2.3rem;
+	font-size: 0.6rem;
+	padding-right:0.5rem;
+}
