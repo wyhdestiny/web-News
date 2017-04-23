@@ -1,0 +1,103 @@
+.lhqPersonMsg-header{
+	width: 100%;
+	height: 8rem;
+	overflow: hidden;
+	background: url(../images/lhqPersonMsg.jpg.jpg) no-repeat;
+	background-size:100% 100% ;
+	border-bottom: 1px solid #737373;
+	margin-top: 2rem;
+}
+.lhqPersonMsg-header>span{
+	display: block;
+	width: 4rem;
+	height: 4rem;
+	border-radius: 50%;
+	margin: 0 auto;
+	margin-top: 1.2rem;
+}
+.lhqPersonMsg-header>span>img{
+
+}
+.lhqPersonMsg-header>p{
+	width: 100%;
+	height: 1.5rem;
+	font-weight: 600;
+	text-align: center;
+	line-height: 1.7rem;
+	font-size: 0.7rem;
+	letter-spacing: 2px;
+}
+.lhqPersonMsg-top{
+	width: 100%;
+	height:2rem;
+	background: #24292E;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+.lhqPersonMsg-top>a>span{
+	color: #FFFFFF;
+	font-size: 0.8rem;
+	width: 2rem;
+	height: 2rem;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 2rem;
+}
+.lhqPersonMsg-top>p{
+	color: #FFFFFF;
+	font-size: 0.7rem;
+	letter-spacing: 2px;
+	width: 5rem;
+	height: 2rem;
+	display: block;
+	float: left;
+	text-align: center;
+	line-height: 2rem;
+	font-weight: 600;
+	margin-left: 3.2rem;
+}
+.lhq-input{
+	width: 100%;
+	height: 6rem;
+	overflow: hidden;
+}
+.lhq-input>p{
+	width: 94%;
+	height: 2rem;
+	border-radius: 0.5rem;
+	/*background: rgba(0,0,0,0.6);*/
+	 background: -webkit-linear-gradient(left,#545659, #BCBDBE);
+	margin: 0 auto;
+	position:relative;
+	margin-top: 0.5rem;
+}
+.lhq-input>p>span{
+	width: 3rem;
+	height:2rem;
+	display: block;
+	text-align: center;
+	line-height: 2rem;
+	float: left;
+	font-size: 0.7rem;
+	font-weight: 600;
+	color: #FFFFFF;
+}
+.lhq-input>p>i{
+	width: 9rem;
+	height: 1.4rem;
+	display: block;
+	position: absolute;
+	right: 1rem;
+	top: 0.3rem;
+	font-size: 0.6rem;
+	font-weight: 600;
+	background: rgba(255,255,255,.1);
+	border-radius: 0.3rem;
+	color: #FFFFFF;
+	border: none;
+	text-indent: 1em;
+	letter-spacing: 0.13rem;
+	
+}
