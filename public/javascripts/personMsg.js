@@ -21,7 +21,7 @@ window.addEventListener("load",function(){
 		url:"http://192.168.43.4:3000/user/change",
 		async:true,
 		data:{
-			uid:1
+			uid:34
 		},
 		success:function(data){
 			console.log(data.data)

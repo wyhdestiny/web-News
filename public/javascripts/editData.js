@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
 		url: "http://192.168.43.4:3000/user/change",
 		async: true,
 		data: {
-			uid: 1
+			uid:34
 		},
 		success: function(data) {
 			console.log(data.data)
@@ -48,7 +48,7 @@ window.addEventListener('load', function() {
 					url: "http://192.168.43.4:3000/user/password",
 					async: true,
 					data: {
-						uid:1,
+						uid:34,
 						password:MD5(password1)
 					},
 					success: function(data) {
@@ -60,4 +60,34 @@ window.addEventListener('load', function() {
 			}
 		}
 	})
+	
+	
+		$('.lhq-bjfile').change(function() {
+				file = this.files[0];
+				console.log(file)
+		})
+		
+		$('.lhq-button').on('click',function(){
+			var formdata  = new FormData();
+			formdata .append('uploadedFile', file)
+			$.ajax({
+					type: 'post',
+					url: 'http://192.168.43.4:3000/user/images',
+					async: true,
+					data: formdata,
+					contentType: false,
+					processData: false,
+					success: function(e) {
+						var img = 'images/'+e.fName;
+						console.log(img)
+					}
+		})
+	
+	
+	
+	
+	
+	
+	})
+	
 })
