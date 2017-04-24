@@ -213,10 +213,19 @@ window.addEventListener('load',function(){
 	
 	
 	
+//返回上一级
+	$(".zhj_head_left").click(function(){
+		location.href="firstPage.html";
+	})	
 	
-	
-	
-	
+//点击搜索
+	$(".zhj_headRigh").click(function(){
+		location.href="search.html";
+	})		
+//点击发布人
+	$(".zhj_fbr").click(function(){
+		location.href="publisher.html";
+	})		
 	
 	
 },false);

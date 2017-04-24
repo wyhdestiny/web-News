@@ -15,4 +15,16 @@ window.addEventListener('load',function(){
 		$('.lhq-zhezhao-box').removeClass('active')
 		$('.lhq-Dj').text(lhqnum)
 	})
+	
+	
+//返回上一级
+	$(".backing_th").click(function(){
+		location.href="firstPage.html";
+	})
+	
+	
+//发布成功
+	$(".lhq-fb").click(function(){
+		location.href="firstPage.html";
+	})
 })

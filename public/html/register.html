@@ -22,37 +22,43 @@
 			</div>
 			<div class="yh_resbody">
 				<div class="wyhUser">
-					<div class="user_div fl">用户名：</div>
-					<input type="text" class="yh_user form-control fl"/>
+					<div class="user_div fl" >用户名：</div>
+					<input type="text" id="Use_val" class="yh_user form-control fl"/>
 				</div>
 				<div class="wyhPass">
 					<div class="pass_div fl">密&#x3000;码：</div>
-					<input type="text" class="yh_pass form-control fl"/>
+					<input type="password" id="Pass_val" class="yh_pass form-control fl"/>
+					<!--<p class="yu_tanmm">密码由6~12位数字和英文组成</p>-->
 				</div>
 				<div class="wyhrePass">
 					<div class="repass_div fl">确认密码：</div>
-					<input type="text" class="yh_repass form-control fl"/>
+					<input type="password" id="rePass_val" class="yh_repass form-control fl"/>
+					<!--<p class="yu_tanremm">两次密码输入不一致</p>-->
 				</div>
 				<div class="wyhTel">
 					<div class="tel_div fl">手机号：</div>
-					<input type="text" class="yh_tel form-control fl"/>
+					<input type="text" id="Tel_val" class="yh_tel form-control fl"/>
+					<!--<p class="yu_tantel">手机号格式不对</p>-->
 				</div>
 				<div class="wyhEml">
 					<div class="eml_div fl">邮&#x3000;箱：</div>
-					<input type="text" class="yh_eml form-control fl"/>
+					<input type="email" id="Eml_val" class="yh_eml form-control fl"/>
+					<!--<p class="yu_taneml">邮箱格式不对</p>-->
 				</div>
 				<div class="wyhName">
 					<div class="name_div fl">姓&#x3000;名：</div>
-					<input type="text" class="yh_name form-control fl"/>
+					<input type="text" id="Name_val" class="yh_name form-control fl"/>
 				</div>
 				<div class="wyhQq">
 					<div class="qq_div fl">QQ：  </div>
-					<input type="text" class="yh_qq form-control fl"/>
+					<input type="text" id="Qq_val" class="yh_qq form-control fl"/>
+					<!--<p class="yu_tanqq">由5~10数字组成</p>-->
 				</div>
 				<div class="yuSubmit">
-					<button class="yu_btn btn btn-info">提&nbsp;交</button>
+					<button id="tijiao" class="yu_btn btn btn-info" >提&nbsp;交</button>
 				</div>
 			</div>
+			
 		</div>
 	</body>
 </html>
