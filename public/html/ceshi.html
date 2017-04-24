@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
 		<script src="../javascripts/jquery.js"></script>
 	</head>
+
 	<body>
+		<button class="xiugai">修改</button>
+		<div>
+			<p>用户名：<input type="text" class="username" /></p>
+			<p>密码：<input type="password" class="pwd" /></p>
+			<p>手机号：<input type="text" class="tel" /></p>
+			<p>邮箱：<input type="text" class="email" /></p>
+			<button>修改提交</button>
+		</div>
+
 		<script type="text/javascript">
-			$.ajax({
-				type:"post",
-				url:"http://localhost:3000/user/register",
-				data:{
-					username: "小明",
-					password: "lxm123",
-					name: "李小明",
-					tel: "15044509022",
-					qq: "1161071902",
-					email: "1161071902@qq.com",
-					level: "0"
-				},
-				success: function(data) {
-					console.log(data)
-				}
-			});
+//			$('.xiugai').click(function() {
+				$.ajax({
+					type: "post",
+					url: "http://localhost:3000/user/publish",
+					data: {
+						category:[21,22],
+						title:'如何让一个盒子水平垂直居中',
+						content:'发布内容',
+						time:'2017-4-22',
+						personid:9,
+						clicks:0,
+						audit:0
+					},
+					success: function(data) {
+						console.log(data)
+					}
+				});
+//			})
 		</script>
 	</body>
+
 </html>
