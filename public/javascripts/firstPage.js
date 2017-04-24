@@ -1,31 +1,6 @@
 window.addEventListener('load',function(){    
      var oDiv = $(".zhj_content").children('div').length
-     console.log(oDiv)
-     		
-     
 
- 
-
-	
-
-
-
-
-
-
-
-//点击头像，跳转页面
-	$(".zhj_head_left").click(function(){
-		location.href="personMsg.html";
-	})
-	
-	
-	
-	
-	
-	
-	
-	
 	
 //点击发布，跳转页面
 	$("#onload").click(function(){
@@ -53,6 +28,34 @@ window.addEventListener('load',function(){
 	$(".zhj_lineSeven").click(function(){
 		location.href="lists.html";
 	})
+
+
+$(".zhj_head_left").click(function(){
+	location.href="personMsg.html";
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 },false)
