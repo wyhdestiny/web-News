@@ -36,7 +36,7 @@
 	text-align: center;
 	line-height: 2rem;
 	color: white;
-	font-size: 0.7rem;
+	font-size: 0.8rem;
 }
 .zhj_head_center{
 	width:calc(50%);
@@ -59,7 +59,10 @@
 .zhj_head_Right input{
 	width: 65%;
 	height: 1.5rem;
+	background: none;
+	border: none;
 	margin-left: 1rem;
+	font-size: 0.9rem;
 }
 .zhj_content{
 	width: 100%;
