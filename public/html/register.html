@@ -9,6 +9,7 @@
 		<script src="../stylesheets/bootstrap/dist/js/bootstrap.js"></script>
 		<script src="../javascripts/register.js"></script>
 		<script src="../javascripts/rem.js"></script>
+		<script src="../javascripts/md5.js"></script>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/bootstrap/dist/css/bootstrap.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/rester.css"/>
 		<link rel="stylesheet" type="text/css" href="../stylesheets/register.css"/>
@@ -28,22 +29,18 @@
 				<div class="wyhPass">
 					<div class="pass_div fl">密&#x3000;码：</div>
 					<input type="password" id="Pass_val" class="yh_pass form-control fl"/>
-					<!--<p class="yu_tanmm">密码由6~12位数字和英文组成</p>-->
 				</div>
 				<div class="wyhrePass">
 					<div class="repass_div fl">确认密码：</div>
 					<input type="password" id="rePass_val" class="yh_repass form-control fl"/>
-					<!--<p class="yu_tanremm">两次密码输入不一致</p>-->
 				</div>
 				<div class="wyhTel">
 					<div class="tel_div fl">手机号：</div>
 					<input type="text" id="Tel_val" class="yh_tel form-control fl"/>
-					<!--<p class="yu_tantel">手机号格式不对</p>-->
 				</div>
 				<div class="wyhEml">
 					<div class="eml_div fl">邮&#x3000;箱：</div>
 					<input type="email" id="Eml_val" class="yh_eml form-control fl"/>
-					<!--<p class="yu_taneml">邮箱格式不对</p>-->
 				</div>
 				<div class="wyhName">
 					<div class="name_div fl">姓&#x3000;名：</div>
@@ -52,13 +49,33 @@
 				<div class="wyhQq">
 					<div class="qq_div fl">QQ：  </div>
 					<input type="text" id="Qq_val" class="yh_qq form-control fl"/>
-					<!--<p class="yu_tanqq">由5~10数字组成</p>-->
 				</div>
 				<div class="yuSubmit">
 					<button id="tijiao" class="yu_btn btn btn-info" >提&nbsp;交</button>
 				</div>
 			</div>
+			<!--遮罩层-->
+			<div class="shdon">
+				<div class="shower">
+					<i class="glyphicon glyphicon-remove"></i>
+		            <p>系统提示：</p>
+		            <p>恭喜你，注册成功！</p>
+		            <div class="zhj_button btn btn-warning">确定</div>
+				</div>	
+			</div>	
 			
+			
+			
+			<!--<div class="shower">
+				<i class="glyphicon glyphicon-remove"></i>
+	            <p>系统提示：</p>
+	            <p>恭喜你，注册成功！</p>
+	            <div class="zhj_button btn btn-warning">确定</div>
+				</div>												
+			</div>	-->
+			<!--<div class="yu_tishi">
+				密码错误
+			</div>-->
 		</div>
 	</body>
 </html>

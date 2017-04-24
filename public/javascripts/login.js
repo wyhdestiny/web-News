@@ -24,12 +24,12 @@ $(document).ready(function(){
 					url:"http://192.168.43.4:3000/user/login", //ness是在app.js中app.use('/ness',neww); 
 					data:{
 						username:userVal,
-						password: pwdVal,
+						password: MD5(pwdVal)
 					},
 					async:true,
 					success:function(e){
 						console.log(e);
-						console.log(e.result[0].uid);
+//						console.log(e.result[0].uid);
 						if(e.success==1){
 							alert("登录成功！");
 							sessionStorage.uid=e.result[0].uid;
@@ -41,7 +41,7 @@ $(document).ready(function(){
 						}else{
 							alert("登陆失败！");
 						}
-//						sessionStorage.setItem("password", MD5(pwdVal));
+						sessionStorage.setItem("password", MD5(pwdVal));
 					}
 				});
 			}
@@ -52,9 +52,14 @@ $(document).ready(function(){
 		
 		
 	})
+//点击注册
 	$("#wyh_zhuce").click(function(){
-		alert(1)
+		
 		location.href="html/register.html";
+		
+		
+		
+		
 	})
 
 	createCode();
@@ -66,8 +71,6 @@ $(document).ready(function(){
 				var index = Math.floor(Math.random() * 36);
 				code += random[index];
 			}
-//			console.log($('.yu_codeImg').text())
-			
 			$('.yu_codeImg').text(code)
 		}
 		
@@ -77,19 +80,7 @@ $(document).ready(function(){
 	})
 	
 	
-	/*$(".wyh_dengL").click(function(){
-		var wyh_code=$("#wyh_code").val().toUpperCase(); 
-		if(wyh_code == 0) {
-			alert('请输入验证码');
-		} else if(wyh_code != code) {
-			alert('验证码不正确，请重新输入');
-			wyh_code = ' ';
-			createCode();
-		} else {
-			console.log(666);
-			
-		}
-	})*/
+
 	
 	
 		
