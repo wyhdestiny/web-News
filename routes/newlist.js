@@ -23,8 +23,8 @@ router.all('*', function(req, res, next) {
 //获取分类列表
 function getListF(category, callback) {
 	pool.getConnection(function(err, connection) {
-		var sql = 'select * from newlist where category = ?';
-		connection.query(sql, [category], function(err, result) {
+		var sql = 'select * from newlist where category = ? and audit = ?';
+		connection.query(sql, [category,1], function(err, result) {
 			if(err) {
 				console.log("getAllUsers Error:" + err.message);
 				return;
@@ -37,17 +37,18 @@ function getListF(category, callback) {
 
 router.get('/list', function(request, response) {
 	console.log("列表进入成功》》》》》")
-	var category = request.query.category;
+	var category = Number(request.query.category);
 
 	getListF(category, function(err, result) {
-		if(result.length == 0) {
-			response.send({
-					success: 2
-				}) //列表分类不存在
-		} else if(result.length > 0) {
+		console.log("result:"+result)
+		if(result.length > 0) {
 			response.send({
 					success: 1,
 					list: result
+				}) //列表分类不存在
+		} else if(result.length == 0) {
+			response.send({
+					success: 2
 				}) //列表获取成功
 		} else if(err) {
 			response.send({
@@ -120,6 +121,134 @@ router.post('/clicks', function(request, response) {
 	})
 
 })
+
+//模糊搜索
+function getNewlistSearch(keyword,callback){
+	pool.getConnection(function(err, connection) {
+		var sql = "select * from newlist where title like ? or content like ?";
+		connection.query(sql, ["%"+keyword+"%","%"+keyword+"%"], function(err, result) {
+			console.log("内容："+result)
+			if(err) {
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			connection.release(); //释放链接
+			callback(err, result)
+		})
+	})
+}
+router.get('/search', function(request, response) {
+	console.log("进入搜索》》》》》》")
+	var keyword = request.query.keyword;
+	getNewlistSearch(keyword, function(err, result) {
+		console.log("result:" + result)
+		if(result){
+			response.send({success:1,data:result})
+		}
+	})
+})
+
+//获取待审核列表
+function getNewlistAudit(audit,callback){
+	pool.getConnection(function(err, connection) {
+		var sql = 'select * from newlist where audit = ?';
+		connection.query(sql, [audit], function(err, result) {
+			if(err) {
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			connection.release(); //释放链接
+			callback(err, result)
+		})
+	})
+}
+router.get('/audit', function(request, response) {
+	console.log("进入待审核列表》》》》》》")
+	var audit = 0;
+	getNewlistAudit(audit, function(err, result) {
+		console.log("result:" + result)
+		if(result.length > 0){
+			response.send({success:1,data:result})
+		}else if(err) {
+			response.send({err: err})
+		}else {
+			response.send({success:2})
+		}
+	})
+})
+
+//修改审核项
+function getAuditG(audit,newid,callback){
+	pool.getConnection(function(err, connection) {
+		var sql = "update newlist set audit = ? where newid = ?";
+		connection.query(sql, [audit, newid], function(err, result) {
+			if(err) {
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			connection.release(); //释放链接
+			callback(err, result)
+		})
+	})
+}
+router.post('/audit', function(request, response) {
+	console.log("进入修改审核项》》》》》》")
+	var audit = request.body.audit,
+		newid = request.body.newid;
+	getAuditG(audit,newid, function(err, result) {
+		if(result.changedRows > 0) {
+			response.send({
+				success: 1
+			}) //添加发布成功
+		} else if(err) {
+			response.send({
+				err: err
+			}) //添加发布错误
+		} else {
+			response.send({
+				success: 3
+			}) //添加发布错误
+		}
+	})
+})
+
+
+
+
+
+
+
+//收藏
+//function getNewlistCollect(collect,callback){
+//	pool.getConnection(function(err, connection) {
+//		var sql = "select * from newlist where newid = ?";
+//		connection.query(sql, [collect], function(err, result) {
+//			console.log("内容："+result)
+//			if(err) {
+//				console.log("getAllUsers Error:" + err.message);
+//				return;
+//			}
+//			connection.release(); //释放链接
+//			callback(err, result)
+//		})
+//	})
+//}
+//router.get('/collect', function(request, response) {
+//	console.log("进入收藏》》》》》》")
+//	var collect = request.query.collect;
+//	console.log('collect:'+collect)
+//	
+//	var data = [];
+//	for(var i=0; i<collect.length; i++){
+//		getNewlistCollect(collect[i], function(err, result) {
+//			if(result){
+//				response.send({data:result})
+//			}
+//		})
+//	}
+//	
+//})
+
 
 
 
