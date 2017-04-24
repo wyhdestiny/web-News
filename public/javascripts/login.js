@@ -33,6 +33,7 @@ $(document).ready(function(){
 						if(e.success==1){
 							alert("登录成功！");
 							sessionStorage.uid=e.result[0].uid;
+							location.href="html/firstPage.html";
 						}else if(e.success==2){
 							alert("用户名不存在！"); 
 						}else if(e.success==3){
