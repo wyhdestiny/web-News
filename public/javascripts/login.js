@@ -42,6 +42,7 @@ $(document).ready(function(){
 							alert("登陆失败！");
 						}
 						sessionStorage.setItem("password", MD5(pwdVal));
+						sessionStorage.setItem("username", userVal);
 					}
 				});
 			}
