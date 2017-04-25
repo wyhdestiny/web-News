@@ -214,7 +214,7 @@ window.addEventListener("load",function(){
 	})
 	quxiao()
 //注册点击取消	
-	function quxiao(){
+	/*function quxiao(){
 		$(".shower i").click(function(){
 			$('.shdon').css('opacity','1');
 			$('.shdon').css('display','none');
@@ -257,18 +257,6 @@ window.addEventListener("load",function(){
 		$('.shower').css('color','black');
 		$('.shower i').css('color','black');
 		$('.shower').css('opacity','0.8');
-		$(".zhj_button").click(function(){
-			$('.shower').css('opacity','1');
-			$('.shdon').css('display','none');
-			$('.shower').css('transition','all 0.6s');
-			$('.shower').css('transform','translateY(200%)');
-			$('.shower').css('background','rgba(0,0,0,0.8)');
-			$('.shower').css('color','white');
-			$('.shower i').css('color','white');
-			$('.shower').css('opacity','0');
-			$('.shower').css('top','0');
-		})	
-//		susu()
 	}
 //点击提交出现弹框成功
 	function hiddsucc(){
@@ -283,25 +271,9 @@ window.addEventListener("load",function(){
 		$('.shower').css('color','black');
 		$('.shower i').css('color','black');
 		$('.shower').css('opacity','0.8');
-		$(".zhj_button").click(function(){
-			$(".txt_yu").html("啥都顺丰到付VC！！")
-//			$('.shower').css('opacity','1');
-//			$('.shdon').css('display','none');
-//			$('.shower').css('transition','all 0.6s');
-//			$('.shower').css('transform','translateY(200%)');
-//			$('.shower').css('background','rgba(0,0,0,0.8)');
-//			$('.shower').css('color','white');
-//			$('.shower i').css('color','white');
-//			$('.shower').css('opacity','0');
-//			$('.shower').css('top','0');
-//			location.href="../login.html";
-		})	
-		
-		
-		
 	}
 	
-
+*/
 
 //返回上一级
 	$('.yh_fh').click(function(){
