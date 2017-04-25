@@ -8,34 +8,48 @@
 	</head>
 
 	<body>
-		<button class="xiugai">修改</button>
-		<div>
-			<p>用户名：<input type="text" class="username" /></p>
-			<p>密码：<input type="password" class="pwd" /></p>
-			<p>手机号：<input type="text" class="tel" /></p>
-			<p>邮箱：<input type="text" class="email" /></p>
-			<button>修改提交</button>
-		</div>
+		用户名：<input type="text" class="username" /><br /> 密码：
+		<input type="password" class="pwd" /><br />
+		<input type="file" class="img" /><br />
+		<img style="width: 200px;height: 200px;" src="../images/portraits/1493081505860.jpg" alt="" />
+		<button>上传</button>
 
 		<script type="text/javascript">
-//			$('.xiugai').click(function() {
-				$.ajax({
-					type: "post",
-					url: "http://localhost:3000/user/publish",
-					data: {
-						category:[21,22],
-						title:'如何让一个盒子水平垂直居中',
-						content:'发布内容',
-						time:'2017-4-22',
-						personid:9,
-						clicks:0,
-						audit:0
-					},
-					success: function(data) {
-						console.log(data)
-					}
-				});
-//			})
+			$.ajax({
+				url: "http://localhost:3000/newlist/list",
+				type: "get",
+				data: {
+					category: 2
+				},
+				success: function(data) {
+					console.log(data)
+				}
+			})
+
+			//			$('button').click(function() {
+			//				$.ajax({
+			//					url: "http://localhost:3000/newlist/audit",
+			//					type: "post",
+			//					data: {
+			//						newid: 1,
+			//						audit: 1
+			//					},
+			//					success: function(data) {
+			//						console.log(data)
+			//					}
+			//				})
+
+			//				$.ajax({
+			//					url: "http://localhost:3000/newlist/collect",
+			//					type: "get",
+			//					data: {
+			//						collect: [2,5,7,4,10]
+			//					},
+			//					success: function(data) {
+			//						console.log(data)
+			//					}
+			//				})
+			//			})
 		</script>
 	</body>
 
