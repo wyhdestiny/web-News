@@ -33,6 +33,19 @@ $(document).ready(function(){
 						if(e.success==1){
 							alert("登录成功！");
 							sessionStorage.uid=e.result[0].uid;
+							$.ajax({
+								type:"get",
+								url:"http://192.168.43.4:3000/user/change",
+								async:true,
+								data:{
+									uid:e.result[0].uid
+								},
+								success:function(data){
+									console.log(data);
+									sessionStorage.level=data.data[0].level;
+								}
+								
+							});
 							location.href="html/firstPage.html";
 						}else if(e.success==2){
 							alert("用户名不存在！"); 

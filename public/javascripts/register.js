@@ -132,6 +132,7 @@ window.addEventListener("load",function(){
 	
 	
 	$("#tijiao").click(function(){
+		
 		var Use_val=$("#Use_val").val();
 	    var Pass_val=$("#Pass_val").val();
 	    var rePass_val=$("#rePass_val").val();
@@ -142,7 +143,8 @@ window.addEventListener("load",function(){
 	    if(Use_val==''){
 	    	$(".yu_tishi").html("请输入您的用户名！")
 	    	$(".yu_tishi").css("display","block");
-	    }else if(Pass_val==""){
+	    }
+	    /*else if(Pass_val==""){
 	    	$(".yu_tishi").html("请输入您的密码！")
 	    	$(".yu_tishi").css("display","block");
 	    }else if(rePass_val==""){
@@ -160,12 +162,28 @@ window.addEventListener("load",function(){
 	    }else if(Qq_val==""){
 	    	$(".yu_tishi").html("请输入您的QQ！")
 	    	$(".yu_tishi").css("display","block");
-	    }else{
-//	    	alert("都填写成功");
-	    	hidd()
-//	    	queding()
-	    	if(queding()){
-	    		$.ajax({
+	    }*/
+	    else{
+	    	console.log("都填写成功");
+	    	tankuang();
+	    	$(".zhj_button").click(function(){
+				var Use_val=$("#Use_val").val();
+			    var Pass_val=$("#Pass_val").val();
+			    var rePass_val=$("#rePass_val").val();
+			    var Tel_val=$("#Tel_val").val();
+			    var Eml_val=$("#Eml_val").val();
+			    var Name_val=$("#Name_val").val();
+			    var Qq_val=$("#Qq_val").val();
+				$('.shower').css('opacity','1');
+				$('.shdon').css('display','none');
+				$('.shower').css('transition','all 0.6s');
+				$('.shower').css('transform','translateY(200%)');
+				$('.shower').css('background','rgba(0,0,0,0.8)');
+				$('.shower').css('color','white');
+				$('.shower i').css('color','white');
+				$('.shower').css('opacity','0');
+				$('.shower').css('top','0');
+				$.ajax({
 					type:"post",
 					url:"http://192.168.43.4:3000/user/register",
 					async:true,
@@ -181,25 +199,22 @@ window.addEventListener("load",function(){
 					success:function(e){
 						console.log(e);
 						if(e.success==1){
+							hiddsucc()
 							console.log("注册成功");
-							location.href="../login.html";
-						}else if(e.success==2){
-							$(".txt_yu").html("用户名已注册！")
-							alert("用户名已注册！");
 							
-	//							
+						}else if(e.success==2){
+							hiddcunzai()
+							console.log("用户名已注册！");
 						}
 						sessionStorage.setItem("password", MD5(Pass_val));
 					}
 				});
-	    	}else{
-	    		quxiao();
-	    	}
-	    	
+			})
 	    }
 	})
+	quxiao()
 //注册点击取消	
-	function quxiao(){
+	/*function quxiao(){
 		$(".shower i").click(function(){
 			$('.shdon').css('opacity','1');
 			$('.shdon').css('display','none');
@@ -213,22 +228,10 @@ window.addEventListener("load",function(){
 			$('.shower').css('top','0');
 		})	
 	}
-//注册点击确定
-	function queding(){
-		$(".zhj_button").click(function(){
-			$('.shower').css('opacity','1');
-			$('.shdon').css('display','none');
-			$('.shower').css('transition','all 0.6s');
-			$('.shower').css('transform','translateY(200%)');
-			$('.shower').css('background','rgba(0,0,0,0.8)');
-			$('.shower').css('color','white');
-			$('.shower i').css('color','white');
-			$('.shower').css('opacity','0');
-			$('.shower').css('top','0');
-		})
-	}
-//点击提交出现弹框
-	function hidd(){
+
+	
+//弹框出来
+	function tankuang(){
 		$('.shdon').css('display','block');
 		$('.shdon').css('opacity','1');
 		$('.shower').css('opacity','1');
@@ -239,8 +242,46 @@ window.addEventListener("load",function(){
 		$('.shower').css('color','black');
 		$('.shower i').css('color','black');
 		$('.shower').css('opacity','0.8');
-		
-		/*$(".shower i").click(function(){
+	}
+	
+//点击提交出现弹框用户名已存在
+	function hiddcunzai(){
+		$(".txt_yu").html("该用户名已注册！")
+		$('.shdon').css('display','block');
+		$('.shdon').css('opacity','1');
+		$('.shower').css('opacity','1');
+		$('.shower').css('display','block');
+		$('.shower').css('transition','all 0.6s');
+		$('.shower').css('transform','translateY(100%)');
+		$('.shower').css('background','rgba(255,255,255,1)');
+		$('.shower').css('color','black');
+		$('.shower i').css('color','black');
+		$('.shower').css('opacity','0.8');
+	}
+//点击提交出现弹框成功
+	function hiddsucc(){
+		$(".txt_yu").html("恭喜你，注册成功！！")
+		$('.shdon').css('display','block');
+		$('.shdon').css('opacity','1');
+		$('.shower').css('opacity','1');
+		$('.shower').css('display','block');
+		$('.shower').css('transition','all 0.6s');
+		$('.shower').css('transform','translateY(100%)');
+		$('.shower').css('background','rgba(255,255,255,1)');
+		$('.shower').css('color','black');
+		$('.shower i').css('color','black');
+		$('.shower').css('opacity','0.8');
+	}
+	
+*/
+
+//返回上一级
+	$('.yh_fh').click(function(){
+		location.href="../login.html";
+	})
+	
+	
+/*$(".shower i").click(function(){
 			$('.shdon').css('opacity','1');
 			$('.shdon').css('display','none');
 			$('.shower').css('opacity','1');
@@ -262,21 +303,6 @@ window.addEventListener("load",function(){
 			$('.shower i').css('color','white');
 			$('.shower').css('opacity','0');
 			$('.shower').css('top','0');
-		})*/
-		
-		
-	}
+		})*/	
 	
-/*	function tishi(){
-//		$('.yu_tishi').css('top','0');
-		setTimeout(function () {
-			 $('.yu_tishi').delay(6000).hide();
-//			$('.yu_tishi').css('top','0');
-		}, 6000);
-	}*/
-//返回上一级
-
-	$('.yh_fh').click(function(){
-		location.href="../login.html";
-	})
 })

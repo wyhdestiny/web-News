@@ -1,6 +1,13 @@
 window.addEventListener("load",function(){
 	
-	
+	$.ajax({
+		type:"post",
+		url:"http://192.168.43.4:3000/newlist/clicks",
+		async:true,
+		data:{
+			newid:
+		}
+	});
 	
 	
 	
