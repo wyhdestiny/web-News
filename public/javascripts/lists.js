@@ -258,7 +258,22 @@ window.addEventListener('load',function(){
 	        if(data.list.length > 0){
 	        	       
 	Fnlist(start) 		        		        	
-	          }		        		        		        	        		        	
+	          }	
+	          
+	    $.ajax({
+			type: "get",
+			url: 'http://192.168.43.4:3000/user/change',
+			async: true,
+	        success: function(data) {
+	          console.log(data)
+	          
+	         }
+	          
+	     })     
+	          
+	          
+	          
+	          
 	        }
 	
 	   })
@@ -293,6 +308,10 @@ window.addEventListener('load',function(){
 	var html='';
 	console.log(id)
 	 function Fnlist(start){
+	 	
+	 	
+	 	
+	 	
 	 	
 		for(var i=start;i<(5+start);i++){
 			if(i == arr.length){
