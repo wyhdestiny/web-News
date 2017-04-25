@@ -15,62 +15,16 @@
 		<button>上传</button>
 
 		<script type="text/javascript">
-			var file;
-			$('.img').change(function() {
-				file = this.files[0];
-
+			$.ajax({
+				url: "http://localhost:3000/newlist/list",
+				type: "get",
+				data: {
+					category: 2
+				},
+				success: function(data) {
+					console.log(data)
+				}
 			})
-
-			$('button').click(function() {
-					var username = $('.username').val(),
-						pwd = $('.pwd').val();
-					var formdata = new FormData();
-					formdata.append("uploadeFile", file);
-
-					console.log(username, pwd, file)
-
-					$.ajax({
-						url: "http://localhost:3000/user/images",
-						type: "post",
-						data: formdata,
-						contentType: false,
-						processData: false,
-						success: function(data) {
-							console.log(data)
-							if(data.fName) {
-								console.log(data.fName)
-								var images = "../images/portraits/"+data.fName;
-								$.ajax({
-									url: "http://localhost:3000/user/change",
-									type: "post",
-									data: {
-										uid: 34,
-										username: '打不死的小强',
-										name: '蔺慧强',
-										tel: 123456789,
-										qq: 123456789,
-										email: 23456,
-										images: images
-									},
-									success: function(data) {
-										console.log(data)
-										
-									}
-								})
-							}
-						}
-					})
-				})
-				//			$.ajax({
-				//					url: "http://localhost:3000/newlist/list",
-				//					type: "get",
-				//					data: {
-				//						category: 2
-				//					},
-				//					success: function(data) {
-				//						console.log(data)
-				//					}
-				//				})
 
 			//			$('button').click(function() {
 			//				$.ajax({
