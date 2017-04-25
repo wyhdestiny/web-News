@@ -13,7 +13,7 @@ window.addEventListener('load', function() {
 		url: "http://192.168.43.4:3000/user/change",
 		async: true,
 		data: {
-			uid: 34
+			uid: sessionStorage.uid
 		},
 		success: function(data) {
 			console.log(data.data)
@@ -92,7 +92,7 @@ window.addEventListener('load', function() {
 						url: "http://192.168.43.4:3000/user/password",
 						async: true,
 						data: {
-							uid: 34,
+							uid: sessionStorage.uid,
 							password: MD5(password1)
 						},
 						success: function(data) {
@@ -214,7 +214,7 @@ window.addEventListener('load', function() {
 				url: 'http://192.168.43.4:3000/user/change',
 				async: true,
 				data: {
-					uid: 34,
+					uid:sessionStorage.uid,
 					username: nc,
 					name: xm,
 					tel: dh,

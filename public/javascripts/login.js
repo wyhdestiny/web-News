@@ -29,7 +29,7 @@ $(document).ready(function(){
 					async:true,
 					success:function(e){
 						console.log(e);
-//						console.log(e.result[0].uid);
+						console.log(e.result[0].uid);
 						if(e.success==1){
 							alert("登录成功！");
 							sessionStorage.uid=e.result[0].uid;
@@ -45,8 +45,12 @@ $(document).ready(function(){
 									sessionStorage.level=data.data[0].level;
 									location.href="html/firstPage.html";
 								}
-								
 							});
+<<<<<<< HEAD
+=======
+							
+						
+>>>>>>> origin/master
 						}else if(e.success==2){
 							alert("用户名不存在！"); 
 						}else if(e.success==3){
