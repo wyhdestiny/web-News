@@ -260,16 +260,7 @@ window.addEventListener('load',function(){
 	Fnlist(start) 		        		        	
 	          }	
 	          
-	    $.ajax({
-			type: "get",
-			url: 'http://192.168.43.4:3000/user/change',
-			async: true,
-	        success: function(data) {
-	          console.log(data)
-	          
-	         }
-	          
-	     })     
+	        
 	          
 	          
 	          
@@ -314,12 +305,22 @@ window.addEventListener('load',function(){
 	 	
 	 	
 		for(var i=start;i<(5+start);i++){
+			$.ajax({
+			type: "get",
+			url: 'http://192.168.43.4:3000/user/change?uid='+arr[i].personid,
+			async: true,
+	        success: function(data) {
+	          console.log(data)
+	          
+	         }
+	          
+	     }) 
 			if(i == arr.length){
 				break;
 			}else {
 				console.log(i)
 				console.log(arr[i])
-				html+='<div class="zhj_biaoti"><a href="details.html?id'+arr[i].newid+'"><h3>'+arr[i].title+'</h3><div class="zhj_text">'+arr[i].content+'</div><div class="zhj_btn"><div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div><div class="zhj_xie">/</div><div class="upName"><span>发布时间：</span><span>'+arr[i].time+'</span></div></div></a></div>';
+				html+='<div class="zhj_biaoti"><a href="details.html?id'+arr[i].newid+'"><h3>'+arr[i].title+'</h3><div class="zhj_text">'+arr[i].content+'</div><div class="zhj_btn"><div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div><div class="upName"><span>发布时间：</span><span>'+arr[i].time+'</span></div></div></a></div>';
 			}
 	   }
 	    $(".zhj_conttens").append(html)	
