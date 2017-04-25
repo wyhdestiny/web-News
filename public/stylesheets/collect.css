@@ -33,7 +33,7 @@
 .lhq-list{
 	width: 100%;
 	height: auto;
-	margin-top: 2rem;
+	margin-top: 2.2rem;
 }
 .lhq-list>a{
 	display: block;
@@ -49,7 +49,7 @@
 
 }
 .lhq-list>a>p>span{
-	display: block;
+	display:block;
 }
 .lhq-list>a>p>i{
 	display: block;

@@ -225,7 +225,111 @@ window.addEventListener('load',function(){
 //点击发布人
 	$(".zhj_fbr").click(function(){
 		location.href="publisher.html";
-	})		
+	})	
 	
+	var id =  location.href.split('?')[1];
+	$.ajax({
+			type: "get",
+			url: 'http://192.168.43.4:3000/newlist/list',
+			async: true,
+			data:{
+				category:id
+			},
+	        success: function(data) {	        	
+	        	arr = data.list;
+	        	console.log(arr)
+	        	if(data.list[0].category == 1){
+//	        		console.log(data)
+	        		$(".zhj_headerCet").text('HTML')
+	        	}else if(data.list[0].category == 2){
+	        		$(".zhj_headerCet").text('CSS')
+	        	}else if(data.list[0].category == 3){
+	        		$(".zhj_headerCet").text('JS')
+	        	}else if(data.list[0].category == 4){
+	        		$(".zhj_headerCet").text('Jquery')
+	        	}else if(data.list[0].category == 5){
+	        		$(".zhj_headerCet").text('Angular')
+	        	}else if(data.list[0].category == 6){
+	        		$(".zhj_headerCet").text('Node/Php')
+	        	}else if(data.list[0].category == 7){
+	        		$(".zhj_headerCet").text('Others')
+	        	}
+	        	
+	        if(data.list.length > 0){
+	        	       
+	Fnlist(start) 		        		        	
+	          }	
+	          
+	        
+	          
+	          
+	          
+	          
+	        }
+	
+	   })
+	
+	
+	
+	var start=0;
+	window.addEventListener('scroll',function(){
+        
+		if($(document).scrollTop() == ($(document).height()-jQuery(window).height())){
+			console.log(1)
+//          $('.zhj_contents').empty();
+            console.log(arr)
+            start += 5;
+            html = '';
+            if(start<arr.length){
+            	Fnlist(start);
+            }
+			
+		}
+		
+	},false);
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	var html='';
+	console.log(id)
+	 function Fnlist(start){
+	 	
+	 	
+	 	
+	 	
+	 	
+		for(var i=start;i<(5+start);i++){
+			
+			if(i == arr.length){
+				break;
+			}else {
+				console.log(i)
+				console.log(arr[i])
+				html+='<div class="zhj_biaoti"><a href="details.html?id'+arr[i].newid+'"><h3>'+arr[i].title+'</h3><div class="zhj_text">'+arr[i].content+'</div><div class="zhj_btn"><div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div><div class="upName"><span>发布时间：</span><span>'+arr[i].time+'</span></div></div></a></div>';
+				$.ajax({
+			type: "get",
+			url: 'http://192.168.43.4:3000/user/change',
+			async: true,
+			data: {
+				uid: arr[i].personid
+			},
+	        success: function(data) {
+	          console.log(data)	          
+	         }
+	          
+	     })
+			}
+	   }
+	    $(".zhj_conttens").append(html)	
+	     
+		
+	}
+			
 	
 },false);
