@@ -14,6 +14,14 @@
 		<link rel="stylesheet" type="text/css" href="../stylesheets/lists.css"/>
 	</head>
 	<body>
+		<!--<div class="shdon">
+			<div class="shower">
+				<i class="glyphicon glyphicon-remove"></i>
+            <p>系统提示：</p>
+            <p>您输入的东西有误</p>
+            <div class="zhj_button btn btn-warning">确定</div>
+			</div>	
+		</div>	-->
 		<div class="zhj_wra">
 			<div class="zhj_header">
 			   <div class="zhj_head_left">
@@ -21,7 +29,6 @@
 			   	  </span>
 			   </div>
 			   <div class="zhj_headerCet">
-			   	  HTML
 			   </div>
 			   <div class="zhj_headRigh">
 			   	 <span class="glyphicon glyphicon-search seach"></span>
@@ -49,23 +56,10 @@
 					</li>
 				</ul>											
 			</div>
-			
-			<div class="zhj_biaoti">
-				<h3>前端的CSS/HTML/JS</h3>
-				<div class="zhj_text">
-					都是你的几十年的你打开的能拿到你发的方法见附件
-					都是你的几十年的你打开的能拿到你发的方法见附件
-					都是你的几十年的你打开的能拿到你发的方法见附件
-					都是你的几十年的你打开的能拿到你发的方法见附件
-				</div>
-				<div class="zhj_btn">
-					<div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div>
-					<div class="zhj_xie">/</div>
-					<div class="upName"><span>发布时间：</span><span>12-22</span></div>
-				</div>
+			<div class="zhj_conttens">
+				
 			</div>
-			
-			<div class="zhj_biaoti">
+			<!--<div class="zhj_biaoti">
 				<h3>前端的CSS/HTML/JS</h3>
 				<div class="zhj_text">
 					都是你的几十年的你打开的能拿到你发的方法见附件
@@ -78,10 +72,9 @@
 					<div class="zhj_xie">/</div>
 					<div class="upName"><span>发布时间：</span><span>12-22</span></div>
 				</div>
-			</div>
+			</div>-->
 			
-			
-			<div class="zhj_biaoti">
+			<!--<div class="zhj_biaoti">
 				<h3>前端的CSS/HTML/JS</h3>
 				<div class="zhj_text">
 					都是你的几十年的你打开的能拿到你发的方法见附件
@@ -94,9 +87,10 @@
 					<div class="zhj_xie">/</div>
 					<div class="upName"><span>发布时间：</span><span>12-22</span></div>
 				</div>
-			</div>	
+			</div>-->
 			
-			<div class="zhj_biaoti">
+			
+			<!--<div class="zhj_biaoti">
 				<h3>前端的CSS/HTML/JS</h3>
 				<div class="zhj_text">
 					都是你的几十年的你打开的能拿到你发的方法见附件
@@ -109,14 +103,61 @@
 					<div class="zhj_xie">/</div>
 					<div class="upName"><span>发布时间：</span><span>12-22</span></div>
 				</div>
-			</div>
+			</div>	-->
+			
+			<!--<div class="zhj_biaoti">
+				<h3>前端的CSS/HTML/JS</h3>
+				<div class="zhj_text">
+					都是你的几十年的你打开的能拿到你发的方法见附件
+					都是你的几十年的你打开的能拿到你发的方法见附件
+					都是你的几十年的你打开的能拿到你发的方法见附件
+					都是你的几十年的你打开的能拿到你发的方法见附件
+				</div>
+				<div class="zhj_btn">
+					<div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div>
+					<div class="zhj_xie">/</div>
+					<div class="upName"><span>发布时间：</span><span>12-22</span></div>
+				</div>
+			</div>-->
+			
 			
 			
 			</div>	
 			<div class="zhj_bottom">
 				温馨提示：滑到底部将自动加载4条新的数据哦！
-			</div>
-		</div>
-		
+			</div>																-
+		</div>						
+		<!--<script>
+			$(".shower i").click(function(){
+				$('.shdon').css('opacity','0');
+				$('.shower').css('opacity','1');
+				$('.shower').css('transition','all 0.6s');
+				$('.shower').css('transform','translateY(300%)');
+				$('.shower').css('background','rgba(0,0,0,0.8)');
+				$('.shower').css('color','white');
+				$('.shower i').css('color','white');
+				$('.shower').css('opacity','0');
+			})			
+			$(".zhj_biaoti")[0].addEventListener("touchstart",function(){	
+				$('.shdon').css('opacity','1');
+				$('.shower').css('opacity','1');
+				$('.shower').css('transition','all 0.6s');
+				$('.shower').css('transform','translateY(200%)');
+				$('.shower').css('background','rgba(255,255,255,1)');
+				$('.shower').css('color','black');
+				$('.shower i').css('color','black');
+				$('.shower').css('opacity','0.8');				
+			},false);																   			
+			$(".zhj_button").click(function(){
+				$('.shdon').css('opacity','0');
+				$('.shower').css('opacity','1');
+				$('.shower').css('transition','all 0.6s');
+				$('.shower').css('transform','translateY(300%)');
+				$('.shower').css('background','rgba(0,0,0,0.8)');
+				$('.shower').css('color','white');
+				$('.shower i').css('color','white');
+				$('.shower').css('opacity','0');
+			})
+		</script>-->
 	</body>
 </html>
