@@ -14,6 +14,8 @@ window.addEventListener('load',function(){
 	
 	
 	
+	
+	
 //点击发布，跳转页面
 	$("#onload").click(function(){
 		location.href="publishCont.html";
