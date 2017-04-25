@@ -141,10 +141,11 @@ function getUserG(uid, callback) {
 	})
 }
 
-function getUsersG(username, pwd, name, tel, email, qq, id, img, callback) {
+function getUsersG(username, name, tel, email, qq, id, img, callback) {
 	pool.getConnection(function(err, connection) {
 		var sql = "update users set username = ?,name = ?,tel = ?,qq = ?,email = ?,img = ? where uid = ?";
-		connection.query(sql, [username, name, tel, qq, email, img, id], function(err, result) {
+		console.log(username,name,tel,qq,email,img,id)
+		connection.query(sql,[username,name,tel,qq,email,img,id], function(err, result) {
 			if(err) {
 				console.log("getAllUsers Error:" + err.message);
 				return;
@@ -210,23 +211,17 @@ router.post('/change', function(request, response) {
 		username = request.body.username,
 		name = request.body.name,
 		tel = request.body.tel,
-		qq = request.body.qq,
+		qq = Number(request.body.qq),
 		email = request.body.email,
 		img = request.body.images;
 	getUsersG(username, name, tel, email, qq, id, img, function(err, result) {
 		console.log("result:" + result)
 		if(result.changedRows > 0) {
-			response.send({
-					success: 1
-				}) //修改成功
+			response.send({success: 1}) //修改成功
 		} else if(err) {
-			response.send({
-					err: err
-				}) //修改错误
+			response.send({err: err}) //修改错误
 		} else {
-			response.send({
-					success: 3
-				}) //无修改项
+			response.send({success: 3}) //无修改项
 		}
 	})
 })
