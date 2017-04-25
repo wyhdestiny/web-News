@@ -50,6 +50,7 @@
 .zhj_padding{
 	width: 100%;
 	height: auto;
+	float: left;
 	padding: 0.5rem 0.1rem 0 0.1rem;
 }
 .seachTex{
@@ -155,6 +156,8 @@
 	color: rgba(0,0,0,0.6);
 	line-height: 4rem;
 	text-align: center;
+	/*display: none;*/
+	transition: all 1s;
 }
 .zhj_img{
 	width: 4rem;
@@ -172,7 +175,11 @@
 	top: 0;
 	left: 0;
 }
-
+.zhj_contents{
+	width: 100%;
+	height: auto;
+	float: left;
+}
 
 
 
