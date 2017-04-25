@@ -8,14 +8,6 @@ window.addEventListener('load',function(){
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 //点击发布，跳转页面
 	$("#onload").click(function(){
 		location.href="publishCont.html";
@@ -42,6 +34,34 @@ window.addEventListener('load',function(){
 	$(".zhj_lineSeven").click(function(){
 		location.href="lists.html?7";
 	})
+
+
+$(".zhj_head_left").click(function(){
+	location.href="personMsg.html";
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 },false)
