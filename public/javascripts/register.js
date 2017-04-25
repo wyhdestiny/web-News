@@ -13,7 +13,7 @@ window.addEventListener("load",function(){
     var qqRex=/^\d{5,10}$/;    //qq验证
     var NameRex = /[\u4e00-\u9fa5]/; //姓名
 	
-	
+	quxiao();
 //密码
 	$("#Pass_val")[0].addEventListener("input",function(){
 		 var Pass_val=$("#Pass_val").val();

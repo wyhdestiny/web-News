@@ -1,11 +1,13 @@
 window.addEventListener("load",function(){
 	
+	
+//	var str = string.split(str)[0]; 
 	$.ajax({
 		type:"post",
 		url:"http://192.168.43.4:3000/newlist/clicks",
 		async:true,
 		data:{
-			newid:
+//			newid:
 		}
 	});
 	
@@ -27,8 +29,6 @@ window.addEventListener("load",function(){
 			$(this).attr("class","glyphicon glyphicon-star-empty yu_collect fl");
 			off=true;
 		}
-		
-//		alert(3)
 	})
 	
 	
