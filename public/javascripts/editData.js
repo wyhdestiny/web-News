@@ -62,15 +62,59 @@ window.addEventListener('load', function() {
 	})
 	
 	
+	 var shoujiRex=/^1[34578]\d{9}$/;
+	$(".lhq-dh")[0].addEventListener('input',function(){
+		if(!shoujiRex.test($('.lhq-dh').val())){
+			$('.lhq-q1').css('display','block')
+			$('.lhq-q2').css('display','none')
+		}else{
+			$('.lhq-q2').css('display','block')
+			$('.lhq-q1').css('display','none')
+		}
+	})
+	
+	
+	 var youxiangRex =  /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
+	$(".lhq-yx")[0].addEventListener('input',function(){
+		if(!youxiangRex.test($('.lhq-yx').val())){
+			$('.lhq-q3').css('display','block')
+			$('.lhq-q4').css('display','none')
+		}else{
+			$('.lhq-q4').css('display','block')
+			$('.lhq-q3').css('display','none')
+		}
+	})
+	
+	
+	  var qqRex=/^\d{5,10}$/;
+	$(".lhq-qq")[0].addEventListener('input',function(){
+		if(!qqRex.test($('.lhq-qq').val())){
+			$('.lhq-q5').css('display','block')
+			$('.lhq-q6').css('display','none')
+		}else{
+			$('.lhq-q6').css('display','block')
+			$('.lhq-q5').css('display','none')
+		}
+	})
+	
+
 		$('.lhq-bjfile').change(function() {
 				file = this.files[0];
 				console.log(file)
 		})
 		
 		$('.lhq-button').on('click',function(){
+			
 			var formdata  = new FormData();
-			formdata .append('uploadedFile', file)
-			$.ajax({
+			formdata.append('uploadedFile',file);
+			
+			var nc = $('.lhq-nc').val();
+			var xm = $('.lhq-xm').val();
+			var dh = $('.lhq-dh').val();
+			var yx = $('.lhq-yx').val();
+			var qq = $('.lhq-qq').val();
+		    if(nc!=''||xm!=''||dh!=''||yx!=''||qq!=''){
+		    	$.ajax({
 					type: 'post',
 					url: 'http://192.168.43.4:3000/user/images',
 					async: true,
@@ -78,16 +122,32 @@ window.addEventListener('load', function() {
 					contentType: false,
 					processData: false,
 					success: function(e) {
-						var img = 'images/'+e.fName;
+						var img = '../images/portraits/'+e.fName;
 						console.log(img)
+						$.ajax({
+							type: "post",
+							url: 'http://192.168.43.4:3000/user/change',
+							async: true,
+							data: {
+								uid:34,
+								username:nc,
+								name:xm,
+								tel:dh,
+								email:yx,
+								qq:qq,
+								images:img
+							},
+							success: function(data) {
+								console.log(data)
+							}
+						})
 					}
-		})
+				})
+		    }else{
+		    	console.log(111111)
+		    }
 	
-	
-	
-	
-	
-	
+
 	})
 	
 })

@@ -228,3 +228,29 @@
 	border-radius: 0.3rem;
 	background: #C6C6C6;
 }
+.lhq-input>p>i:nth-child(3){
+	width:2rem;
+	height: 2rem;
+	position: absolute;
+	right: 0.7rem;
+	display:block;
+	top: 0;
+	line-height:2rem;
+	font-size: 0.7rem;
+	color:#FF8080;
+	text-indent:1em;
+	display: none;
+}
+.lhq-input>p>i:nth-child(4){
+	width:2rem;
+	height: 2rem;
+	position: absolute;
+	right: 0.7rem;
+	display:block;
+	top: 0;
+	line-height:2rem;
+	font-size: 0.7rem;
+	color:#84F4D9;
+	text-indent:1em;
+	display: none;
+}
