@@ -24,7 +24,8 @@ window.addEventListener("load",function(){
 			uid:34
 		},
 		success:function(data){
-			console.log(data.data[0].img)
+			sessionStorage.img=data.data[0].img;
+			console.log(sessionStorage.img)
 			$('.lhq-touxiang').attr('src',data.data[0].img);
 			$('.lhq-nc').text(data.data[0].username)
 		}

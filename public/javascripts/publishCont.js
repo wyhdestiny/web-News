@@ -24,7 +24,47 @@ window.addEventListener('load',function(){
 	
 	
 //发布成功
-	$(".lhq-fb").click(function(){
-		location.href="firstPage.html";
+//	$(".lhq-fb").click(function(){
+//		location.href="firstPage.html";
+//	})
+//	
+	
+	//点击发布
+	$('.lhq-fb').on('click',function(){
+		var lx = $('.lhq-Dj').text();
+		var bt = $('.lhq-btt').val();
+		var nr = $('.lhq-zww').val();
+		if(lx == ''|| bt == ''||nr == ''){
+			alert('请输入完整内容！')
+		}else{
+			$.ajax({
+				type: "post",
+				url: 'http://192.168.43.4:3000/user/publish',
+				async: true,
+				data: {
+					
+				},
+				success: function(data) {
+					
+
+					}
+				})
+		}
 	})
+//	
+//	category:分类(1为html；2为css；3为原生js；4为jquery；5为angular；6为node/php；7为其他)
+//		title：发布信息的标题
+//		content：发布的内容
+//		time：发布时间
+//		personid：发布人的uid
+//	
+//	
+	
+	
+	
+	
+	
+	
+	
+	
 })
