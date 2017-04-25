@@ -43,10 +43,10 @@ $(document).ready(function(){
 								success:function(data){
 									console.log(data);
 									sessionStorage.level=data.data[0].level;
+									location.href="html/firstPage.html";
 								}
 								
 							});
-							location.href="html/firstPage.html";
 						}else if(e.success==2){
 							alert("用户名不存在！"); 
 						}else if(e.success==3){
