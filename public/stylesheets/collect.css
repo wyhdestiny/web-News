@@ -33,22 +33,24 @@
 .lhq-list{
 	width: 100%;
 	height: auto;
-	margin-top: 2rem;
+	margin-top: 2.2rem;
 }
 .lhq-list>a{
 	display: block;
 	width: 100%;
-	height: 5.5rem;
-	background:#E3E3E3;
+	height: 5rem;
+	background:#FFFFFF;
 	text-decoration: none;
 	/*border-bottom: 1px solid #262626;
 	border-top: 1px solid #262626;*/
 	margin-bottom: 0.5rem;
+	box-shadow: 0px 0px 5px 1px #000000 inset;
 	overflow: hidden;
+	float: left;
 
 }
 .lhq-list>a>p>span{
-	display: block;
+	display:block;
 }
 .lhq-list>a>p>i{
 	display: block;
@@ -58,7 +60,7 @@
 	margin: 0 auto;
 	/*background: -webkit-linear-gradient(top,#545659, #BCBDBE);*/
 	color: #000000;
-	margin-top: 0.3rem;
+	margin-top: 0.1rem;
 	border-radius: 0.3rem;
 	/*box-shadow: 0px 0px 1px 1px #000000;*/
 }
@@ -100,14 +102,14 @@
 	overflow: hidden;
 	
 }
-
 .lhq-list>a>p:nth-child(3){
 	height:1.5rem;
 	position: relative;
 }
 .lhq-list>a>p:nth-child(3)>span:nth-child(1){
 	height:1.5rem;
-	width:2rem;
+	/*width:2rem;*/
+	width: auto;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -118,7 +120,7 @@
 }
 .lhq-list>a>p:nth-child(3)>i{
 	height:1.5rem;
-	width: 3rem;
+	/*width: 3rem;*/
 	font-style: normal;
 	position: absolute;
 	top: 0;
