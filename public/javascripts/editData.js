@@ -17,7 +17,7 @@ window.addEventListener('load', function() {
 		},
 		success: function(data) {
 			console.log(data.data)
-			$('.lhq-bjimg').attr('src', data.data[0].img);
+			$('.lhq-bjimg').attr('src',"http://192.168.43.4:3000/"+data.data[0].img);
 			$('.lhq-nc').val(data.data[0].username)
 			$('.lhq-xm').val(data.data[0].name)
 			$('.lhq-dh').val(data.data[0].tel)
