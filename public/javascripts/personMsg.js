@@ -59,6 +59,12 @@ var lhqarr5 = [];
 			}
 			lhqarr4.push(lhqarr3.unique())
 			console.log(lhqarr4)
+			for(var i = 0;i<lhqarr4[0].length;i++){
+				if(lhqarr4[0][i]!='null'){
+					lhqarr5.push(lhqarr4[0][i])
+				}
+			}
+			$('.lhqpig').text(lhqarr5.length)
 		}
 	});
 	
