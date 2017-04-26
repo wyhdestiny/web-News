@@ -202,17 +202,7 @@ window.addEventListener('load',function(){
 				$('#auto ul li').eq(i).fadeIn(300).siblings().fadeOut(300);
 			}
 			setInterval(auto,3000);
-	
-	
-	
-	
-	
-	
-	
-	Fnlist(start) 
-	
-	
-	
+							
 //返回上一级
 	$(".zhj_head_left").click(function(){
 		location.href="firstPage.html";
@@ -235,30 +225,42 @@ window.addEventListener('load',function(){
 			data:{
 				category:id
 			},
-	        success: function(data) {	        	
+	        success: function(data) {	
+	        	sessionStorage.uid=id;
+//	        	console.log(sessionStorage.uid);
 	        	arr = data.list;
-	        	console.log(arr)
-	        	if(data.list[0].category == 1){
-//	        		console.log(data)
-	        		$(".zhj_headerCet").text('HTML')
-	        	}else if(data.list[0].category == 2){
-	        		$(".zhj_headerCet").text('CSS')
-	        	}else if(data.list[0].category == 3){
-	        		$(".zhj_headerCet").text('JS')
-	        	}else if(data.list[0].category == 4){
-	        		$(".zhj_headerCet").text('Jquery')
-	        	}else if(data.list[0].category == 5){
-	        		$(".zhj_headerCet").text('Angular')
-	        	}else if(data.list[0].category == 6){
-	        		$(".zhj_headerCet").text('Node/Php')
-	        	}else if(data.list[0].category == 7){
-	        		$(".zhj_headerCet").text('Others')
+	        	console.log(data)
+	        	if(data.success == 2){
+	        		console.log('内容为空')
+	        	}else if(data.success == 1){
+	        		console.log("有内容哦！")
 	        	}
 	        	
-	        if(data.list.length > 0){
-	        	       
-	Fnlist(start) 		        		        	
-	         }		          	        	          	          	          	          
+	        	
+	        for(var i=0;i<data.list.length;i++){
+	        	if(data.list[i].category == 1){
+//	        		console.log('1')
+	        	$(".zhj_headerCet").text('HTML')
+	        	}
+               else if(data.list[i].category == 2){
+	        		$(".zhj_headerCet").text('CSS')
+	        	}else if(data.list[i].category == 3){
+	        		$(".zhj_headerCet").text('JS')
+	        	}else if(data.list[i].category == 4){
+	        		$(".zhj_headerCet").text('Jquery')
+	        	}else if(data.list[i].category == 5){
+	        		$(".zhj_headerCet").text('Angular')
+	        	}else if(data.list[i].category == 6){
+	        		$(".zhj_headerCet").text('Node/Php')
+	        	}else{
+	        		$(".zhj_headerCet").text('Others')
+	        	}
+	        }
+ 	
+	        	
+	        if(data.list.length > 0){	        	       
+				Fnlist(start) 		        		        	
+	          }
 	        }
 	
 	   })
@@ -269,9 +271,9 @@ window.addEventListener('load',function(){
 	window.addEventListener('scroll',function(){
         
 		if($(document).scrollTop() == ($(document).height()-jQuery(window).height())){
-			console.log(1)
+//			console.log(1)
 //          $('.zhj_contents').empty();
-            console.log(arr)
+//          console.log(arr)
             start += 5;
             html = '';
             if(start<arr.length){
@@ -284,9 +286,10 @@ window.addEventListener('load',function(){
 	
 							
 	var html='';
+	
 	console.log(id)
-	 function Fnlist(start){	
-//	console.log(id)
+	
+	var djsName;
 	 function Fnlist(start){
 	 	
 		for(var i=start;i<(5+start);i++){
@@ -294,10 +297,9 @@ window.addEventListener('load',function(){
 			if(i == arr.length){
 				break;
 			}else {
-				console.log(i)
-				console.log(arr[i])
-				html+='<div class="zhj_biaoti"><a href="details.html?id'+arr[i].newid+'"><h3>'+arr[i].title+'</h3><div class="zhj_text">'+arr[i].content+'</div><div class="zhj_btn"><div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div><div class="upName"><span>发布时间：</span><span>'+arr[i].time+'</span></div></div></a></div>';
-		$.ajax({
+//				console.log(i)
+//				console.log(arr[i])
+				$.ajax({
 			type: "get",
 			url: 'http://192.168.43.4:3000/user/change',
 			async: true,
@@ -305,14 +307,25 @@ window.addEventListener('load',function(){
 				uid: arr[i].personid
 			},
 	        success: function(data) {
-	          console.log(data)	          
-	         }
-	          
-	      })
+	          	djsName = data.data[0].username;
+	         	liebiao(djsName,start)
+	         	$(".zhj_conttens").append(html)	
+				
+				start++;
+	        }	          
+	     })
 	    }
+			
 	  }
-	    $(".zhj_conttens").append(html)	     		
+	         		
 	}
+	 
+	 
+	 function liebiao(djsName,start){
+	 	html='<div class="zhj_biaoti"><a href="details.html?id'+arr[start].newid+'"><h3>'+arr[start].title+'</h3><div class="zhj_text">'+arr[start].content+'</div><div class="zhj_btn"><div class="zhj_fbr"></a><a href="publisher.html?id'+arr[start].personid+'"><span>发布人：</span><span class="who">'+djsName+'</span></a></div><div class="upName"><span>发布时间：</span><span>'+arr[start].time+'</span></div></div></div>';
+	 	
+	 	return html;
+	 }
 			
 	
 },false);

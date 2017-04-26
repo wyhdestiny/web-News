@@ -168,6 +168,11 @@
 	bottom: 0.3rem;
 	font-size: 0.6rem;
 }
+.who{
+	width: 2rem;
+	height: 1rem;
+	color: blue;
+}
 .upName{
 	width: auto;
 	height: auto;
@@ -179,6 +184,9 @@
 	text-align: center;
 	border-radius: 0.2rem;
 	padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+}
+.upName span:nth-child(2){
+	color: blue;
 }
 .zhj_xie{
 	position: absolute;
