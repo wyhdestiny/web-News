@@ -26,8 +26,8 @@ var lhqarr2 = [];
 			uid:sessionStorage.uid
 		},
 		success:function(data){
+			console.log(data)
 			sessionStorage.img=data.data[0].img;
-			console.log(sessionStorage.img)
 			$('.lhq-touxiang').attr('src',data.data[0].img);
 			$('.lhq-nc').text(data.data[0].username);
 			
