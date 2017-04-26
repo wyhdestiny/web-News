@@ -12,6 +12,11 @@ window.addEventListener("load",function(){
 //退出登录
 	$(".lhq-button").click(function(){
 		location.href="../login.html"
+		sessionStorage.setItem("password", '');
+		sessionStorage.setItem("username", '');
+		sessionStorage.setItem("level", '');
+		sessionStorage.setItem("uid", '');
+		sessionStorage.setItem("img", '');
 	})
 
 

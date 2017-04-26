@@ -203,10 +203,13 @@ window.addEventListener("load",function(){
 									console.log(e);
 									if(e.success==1){
 										console.log("注册成功");
+										location.href="../login.html";
+										
 									}else if(e.success==2){
 										console.log("用户名已注册！");
 									}
-									sessionStorage.setItem("password", MD5(Pass_val));
+									sessionStorage.setItem("password", Pass_val);
+									sessionStorage.setItem("username", Use_val);
 								}
 							});
 						})

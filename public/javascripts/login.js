@@ -1,5 +1,10 @@
 $(document).ready(function(){
 	
+	
+	if(sessionStorage){
+		$("#wyh_uname").val(sessionStorage.username);
+		$("#wyh_pwd").val(sessionStorage.password);
+	}
 	$("#loading").click(function(){
 		var userVal=$("#wyh_uname").val();
 	    var pwdVal=$("#wyh_pwd").val();
@@ -47,15 +52,26 @@ $(document).ready(function(){
 									sessionStorage.level=data.data[0].level;
 									location.href="html/firstPage.html";
 								}
-//								sessionStorage.level=data.data[0].level;
 							});
 
 						}else if(e.success==2){
-							alert("用户名不存在！"); 
+							$(".wenz_yu").html("用户名不存在")
+							$(".wyh_tingshi").css("display","block");
+							$(".yuhan_sure").css("display","block");
+							console.log("用户名不存在！"); 
 						}else if(e.success==3){
-							alert("用户名和密码不匹配！"); 
+							$(".wenz_yu").html("用户名和密码不匹配")
+							$(".wyh_tingshi").css("display","block");
+							$(".yuhan_sure").css("display","block");
+							displayno()
+							console.log("用户名和密码不匹配！"); 
 						}else{
-							alert("登陆失败！");
+							
+							$(".wenz_yu").html("登陆失败")
+							$(".wyh_tingshi").css("display","block");
+							$(".yuhan_sure").css("display","block");
+							displayno()
+							console.log("登陆失败！");
 						}
 						sessionStorage.setItem("password", MD5(pwdVal));
 						sessionStorage.setItem("username", userVal);
@@ -64,7 +80,14 @@ $(document).ready(function(){
 			}
 	    }
 		
+//点击取消
+	function displayno(){
+		$(".yuhan_sure").click(function(){
+			$(".wyh_tingshi").css("display","none");
+			$(".yuhan_sure").css("display","none");
+		})
 		
+	}
 		
 		
 		
