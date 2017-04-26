@@ -21,7 +21,7 @@ window.addEventListener("load",function(){
 		url:"http://192.168.43.4:3000/user/change",
 		async:true,
 		data:{
-			uid:34
+			uid:sessionStorage.uid
 		},
 		success:function(data){
 			sessionStorage.img=data.data[0].img;
@@ -30,4 +30,13 @@ window.addEventListener("load",function(){
 			$('.lhq-nc').text(data.data[0].username)
 		}
 	});
+	
+	var lhqsb = sessionStorage.level;
+	console.log(lhqsb)
+	
+	if(lhqsb==1){
+		$('.lhqdsh').css('display','none')
+	}
+	
+	
 })
