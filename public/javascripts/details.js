@@ -32,8 +32,9 @@ window.addEventListener("load",function(){
 						},
 						success:function(e){
 							console.log(e);
-							sessionStorage.newid=e.data[0].newid;
+							
 						}
+//						sessionStorage.newid=e.data[0].newid;
 					})
 					off=false;
 				}
