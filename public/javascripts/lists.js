@@ -209,7 +209,7 @@ window.addEventListener('load',function(){
 	
 	
 	
-	
+	Fnlist(start) 
 	
 	
 	
@@ -258,13 +258,7 @@ window.addEventListener('load',function(){
 	        if(data.list.length > 0){
 	        	       
 	Fnlist(start) 		        		        	
-	          }	
-	          
-	        
-	          
-	          
-	          
-	          
+	         }		          	        	          	          	          	          
 	        }
 	
 	   })
@@ -288,22 +282,10 @@ window.addEventListener('load',function(){
 		
 	},false);
 	
-	
-	
-	
-	
-	
-	
-	
-	
+							
 	var html='';
 	console.log(id)
-	 function Fnlist(start){
-	 	
-	 	
-	 	
-	 	
-	 	
+	 function Fnlist(start){	 		 		 		 		 	
 		for(var i=start;i<(5+start);i++){
 			
 			if(i == arr.length){
@@ -312,7 +294,7 @@ window.addEventListener('load',function(){
 				console.log(i)
 				console.log(arr[i])
 				html+='<div class="zhj_biaoti"><a href="details.html?id'+arr[i].newid+'"><h3>'+arr[i].title+'</h3><div class="zhj_text">'+arr[i].content+'</div><div class="zhj_btn"><div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div><div class="upName"><span>发布时间：</span><span>'+arr[i].time+'</span></div></div></a></div>';
-				$.ajax({
+		$.ajax({
 			type: "get",
 			url: 'http://192.168.43.4:3000/user/change',
 			async: true,
@@ -323,12 +305,10 @@ window.addEventListener('load',function(){
 	          console.log(data)	          
 	         }
 	          
-	     })
-			}
-	   }
-	    $(".zhj_conttens").append(html)	
-	     
-		
+	      })
+	    }
+	  }
+	    $(".zhj_conttens").append(html)	     		
 	}
 			
 	

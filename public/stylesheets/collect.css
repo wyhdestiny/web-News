@@ -46,6 +46,7 @@
 	margin-bottom: 0.5rem;
 	box-shadow: 0px 0px 5px 1px #000000 inset;
 	overflow: hidden;
+	float: left;
 
 }
 .lhq-list>a>p>span{
@@ -101,14 +102,14 @@
 	overflow: hidden;
 	
 }
-
 .lhq-list>a>p:nth-child(3){
 	height:1.5rem;
 	position: relative;
 }
 .lhq-list>a>p:nth-child(3)>span:nth-child(1){
 	height:1.5rem;
-	width:2rem;
+	/*width:2rem;*/
+	width: auto;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -119,7 +120,7 @@
 }
 .lhq-list>a>p:nth-child(3)>i{
 	height:1.5rem;
-	width: 3rem;
+	/*width: 3rem;*/
 	font-style: normal;
 	position: absolute;
 	top: 0;
