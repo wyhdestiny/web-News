@@ -34,7 +34,6 @@ window.addEventListener("load",function(){
 							console.log(e);
 							
 						}
-//						sessionStorage.newid=e.data[0].newid;
 					})
 					off=false;
 				}
