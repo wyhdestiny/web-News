@@ -52,6 +52,24 @@ function getUsers(username, pwd, name, tel, qq, email, level, img, callback) {
 }
 
 //注册
+router.get('/register', function(request, response) {
+	console.log("进入用户名查找》》》》》》")
+	var username = request.query.username;
+
+	getAllUsers(username, function(err, result) {
+		if(result == '' || result == null) {
+			response.send({success: 1})
+		} else if(result != '' || result != null) {
+			response.send({success: 2}) //用户名已存在
+		} else if(err) {
+			response.send({
+					err: err
+				}) //信息搜索错误
+		}
+	})
+
+})
+
 router.post('/register', function(request, response) {
 	console.log("进入注册》》》》》》")
 	var username = request.body.username,
@@ -63,29 +81,19 @@ router.post('/register', function(request, response) {
 		img = "../images/icon.png",
 		level = 0;
 
-	getAllUsers(username, function(err, result) {
-		if(result == '' || result == null) {
-			getUsers(username, pwd, name, tel, qq, email, level, img, function(err, result) {
-				console.log("result:" + result)
-				if(result.insertId > 0) {
-					response.send({
-						success: 1,
-						data: result
-					})
-				}
-			})
-		} else if(result != '' || result != null) {
-			response.send({
-					success: 2
-				}) //用户名已存在
-		} else if(err) {
-			response.send({
-					err: err
-				}) //信息搜索错误
+	getUsers(username, pwd, name, tel, qq, email, level, img, function(err, result) {
+		console.log("result:" + result)
+		if(result.insertId > 0) {
+			response.send({success: 1,data: result})
+		}else if(err){
+			response.send({err:err})
+		}else {
+			response.send({success: 2})
 		}
 	})
-
 })
+
+
 
 //登陆
 router.post('/login', function(request, response) {
@@ -105,9 +113,7 @@ router.post('/login', function(request, response) {
 						result: result
 					}) //登陆成功
 			} else if(result[0].password != pwd) {
-				response.send({
-						success: 3
-					}) //登陆用户名与密码不匹配
+				response.send({success: 3}) //登陆用户名与密码不匹配
 			} else {
 				response.send({
 						success: 4
@@ -211,7 +217,7 @@ router.post('/change', function(request, response) {
 		username = request.body.username,
 		name = request.body.name,
 		tel = request.body.tel,
-		qq = Number(request.body.qq),
+		qq = request.body.qq,
 		email = request.body.email,
 		img = request.body.images;
 	getUsersG(username, name, tel, email, qq, id, img, function(err, result) {
@@ -261,8 +267,8 @@ router.post('/publish', function(request, response) {
 		content = request.body.content,
 		time = request.body.time,
 		personid = Number(request.body.personid),
-		clicks = request.body.clicks,
-		audit = request.body.audit;
+		clicks = 0,
+		audit = 0;
 
 	console.log(category, title, content, time, personid, clicks, audit)
 	getPublish(category, title, content, time, personid, clicks, audit, function(err, result) {

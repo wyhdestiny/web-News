@@ -38,7 +38,6 @@ function getListF(category, callback) {
 router.get('/list', function(request, response) {
 	console.log("列表进入成功》》》》》")
 	var category = Number(request.query.category);
-
 	getListF(category, function(err, result) {
 		console.log("result:"+result)
 		if(result.length > 0) {
@@ -73,7 +72,7 @@ function getListS(newid, callback) {
 				return;
 			}
 			connection.release(); //释放链接
-			callback(err, clicks)
+			callback(err, result)
 		})
 	})
 }
@@ -92,15 +91,15 @@ function getListG(clicks, newid, callback) {
 	})
 }
 router.post('/clicks', function(request, response) {
-	console.log("列表进入成功》》》》》")
-	var newid = request.body.newid;
+	console.log("列表点击量进入成功》》》》》")
+	var newid = Number(request.body.newid);
 
 	getListS(newid, function(err, result) {
 		var clicks = result[0].clicks;
-		var result = result + 1;
-		if(result.uid > 0) {
+		clicks = clicks + 1;
+		if(result[0].newid > 0) {
 			response.send({success: 1,data: result})
-			getListG(result, newid, function(err, result) {
+			getListG(clicks, newid, function(err, result) {
 				if(result.changedRows > 0) {
 					console.log("修改成功") //修改成功
 				} else if(err) {
@@ -114,9 +113,7 @@ router.post('/clicks', function(request, response) {
 					err: err
 				}) //数据获取错误
 		} else {
-			response.send({
-					success: 3
-				}) //数据获取错误
+			response.send({success: 3}) //数据获取错误
 		}
 	})
 
@@ -212,43 +209,57 @@ router.post('/audit', function(request, response) {
 	})
 })
 
+//点击添加收藏夹
+function getNewlistCollect(uid,callback){
+	pool.getConnection(function(err, connection) {
+		var sql = "select * from users where uid = ?";
+		connection.query(sql, [uid], function(err, result) {
+			if(err) {
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			connection.release(); //释放链接
+			callback(err, result)
+		})
+	})
+}
+function getCollectG(uid,newid,callback){
+	pool.getConnection(function(err, connection) {
+		var sql = "update users set collect = ? where uid = ?";
+		connection.query(sql, [newid,uid], function(err, result) {
+			console.log("内容："+result)
+			if(err) {
+				console.log("getAllUsers Error:" + err.message);
+				return;
+			}
+			connection.release(); //释放链接
+			callback(err, result)
+		})
+	})
+}
+router.post('/collect', function(request, response) {
+	console.log("进入添加收藏》》》》》》")
+	var uid = request.body.uid,
+		newid = request.body.newid;
+	
+	getNewlistCollect(uid,function(err,result){
+		if(result){
+			console.log(result[0].collect)
+			newid = result[0].collect+"-"+newid;
+			getCollectG(uid,newid, function(err, result) {
+				if(result.changedRows > 0) {
+					response.send({success: 1}) //修改成功
+				} else if(err) {
+						response.send({err: err}) //修改错误
+				} else {
+					response.send({success: 2}) //无修改项
+				}
+			})
+		}
+	})	
+})
 
-
-
-
-
-
-//收藏
-//function getNewlistCollect(collect,callback){
-//	pool.getConnection(function(err, connection) {
-//		var sql = "select * from newlist where newid = ?";
-//		connection.query(sql, [collect], function(err, result) {
-//			console.log("内容："+result)
-//			if(err) {
-//				console.log("getAllUsers Error:" + err.message);
-//				return;
-//			}
-//			connection.release(); //释放链接
-//			callback(err, result)
-//		})
-//	})
-//}
-//router.get('/collect', function(request, response) {
-//	console.log("进入收藏》》》》》》")
-//	var collect = request.query.collect;
-//	console.log('collect:'+collect)
-//	
-//	var data = [];
-//	for(var i=0; i<collect.length; i++){
-//		getNewlistCollect(collect[i], function(err, result) {
-//			if(result){
-//				response.send({data:result})
-//			}
-//		})
-//	}
-//	
-//})
-
+//我的收藏及我的发布详情
 
 
 

@@ -11,20 +11,63 @@
 		用户名：<input type="text" class="username" /><br /> 密码：
 		<input type="password" class="pwd" /><br />
 		<input type="file" class="img" /><br />
-		<img style="width: 200px;height: 200px;" src="../images/portraits/1493081505860.jpg" alt="" />
+		<img style="width: 200px;height: 200px;" src="" alt="" />
 		<button>上传</button>
 
 		<script type="text/javascript">
-			$.ajax({
-				url: "http://localhost:3000/newlist/list",
-				type: "get",
-				data: {
-					category: 2
-				},
-				success: function(data) {
-					console.log(data)
-				}
-			})
+			//			var file;
+			//			$('.img').change(function() {
+			//				file = this.files[0];
+			//				var fileReader = new FileReader();  
+			//	            fileReader.readAsDataURL(file);  
+			//	            fileReader.onload = function(event){  
+			//	                var result = event.target.result;   //返回的dataURL  
+			//	                $('img').attr('src',result);  
+			//	            }
+			//				var formdata = new FormData();
+			//				formdata.append("uploadeFile", file);
+			//				$.ajax({
+			//					url: "http://localhost:3000/user/images",
+			//					type: "post",
+			//					data: formdata,
+			//					contentType: false,
+			//					processData: false,
+			//					success: function(data) {
+			//						console.log(data)
+			//						if(data.fName) {
+			//							console.log(data.fName)
+			//							var images = "../images/portraits/"+data.fName;
+			//							
+			//						}
+			//					}
+			//				})
+			//			})
+
+			$('button').click(function() {
+					$.ajax({
+						url: "http://localhost:3000/newlist/collect",
+						type: "post",
+						data: {
+							uid: 1,
+							newid: 5
+						},
+						success: function(data) {
+							console.log(data)
+
+						}
+					})
+
+				})
+//							$.ajax({
+//									url: "http://localhost:3000/newlist/clicks",
+//									type: "post",
+//									data: {
+//										newid: 1
+//									},
+//									success: function(data) {
+//										console.log(data)
+//									}
+//							})
 
 			//			$('button').click(function() {
 			//				$.ajax({
