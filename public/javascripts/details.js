@@ -48,7 +48,7 @@ window.addEventListener("load",function(){
 	
 //返回上一级
 	$(".yh_defh").click(function(){
-		location.href="lists.html";
+		location.href="lists.html?"+sessionStorage.uid;
 	})
 	
 	

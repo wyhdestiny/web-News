@@ -2,12 +2,20 @@ window.addEventListener('load',function(){
 	
 	
 //返回上一级
+
+    
 	$(".zhj_head_left").click(function(){
-		location.href="lists.html";
+		location.href="lists.html?"+sessionStorage.uid;
 	})	
+		
+	
+		
 	
 	$('.btn')[0].addEventListener('touchstart',function(){
-		var Sval = $(".textv").val();
+		if($(".textv").val()==''){
+			  return;
+		}else{
+			var Sval = $(".textv").val();
 		
 		$.ajax({
 			type:"get",
@@ -28,15 +36,14 @@ window.addEventListener('load',function(){
 					$('.zhj_contents').append(html);
 					$(".zhj_biaoti").css('display','block');
 					$(".zhj_null").css('display','none');
-					
-					
-//					html='';
 			 	}else{
 			 		$(".zhj_biaoti").css('display','none');
-					$(".zhj_null").css('display','block')
+					$(".zhj_null").css('display','block');					
 				}
 			}
 		})
+		}
+		
 		
 		
 		

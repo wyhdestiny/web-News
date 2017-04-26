@@ -21,6 +21,11 @@ window.addEventListener("load",function(){
 
 
 //获取个人信息
+var lhqarr=[];
+var lhqarr2 = [];
+var lhqarr3 = [];
+var lhqarr4 = [];
+var lhqarr5 = [];
 	$.ajax({
 		type:"get",
 		url:"http://192.168.43.4:3000/user/change",
@@ -29,17 +34,51 @@ window.addEventListener("load",function(){
 			uid:sessionStorage.uid
 		},
 		success:function(data){
+			console.log(data)
 			sessionStorage.img=data.data[0].img;
-			console.log(sessionStorage.img)
-			$('.lhq-touxiang').attr('src',data.data[0].img);
-			$('.lhq-nc').text(data.data[0].username)
+			$('.lhq-touxiang').attr('src',"http://192.168.43.4:3000/"+data.data[0].img);
+			$('.lhq-nc').text(data.data[0].username);
+			
+			var lhqsss = data.data[0].releases;
+			lhqarr=lhqsss.split('-');
+			for(var i = 0; i<lhqarr.length;i++){
+				if(lhqarr[i]!='null'){
+					lhqarr2.push(lhqarr[i])
+				}
+			}
+			
+			$('.lhqff').text(lhqarr2.length)
+			
+			var lhqqq = data.data[0].collect;
+				lhqarr3 = lhqqq.split('-')
+			
+			Array.prototype.unique = function() {
+				this.sort();
+				var res = [this[0]];
+				for(var i = 1; i < this.length; i++) {
+					if(this[i] !== res[res.length - 1]) {
+						res.push(this[i]);
+					}
+				}
+				return res;
+			}
+			lhqarr4.push(lhqarr3.unique())
+			console.log(lhqarr4)
+			for(var i = 0;i<lhqarr4[0].length;i++){
+				if(lhqarr4[0][i]!='null'){
+					lhqarr5.push(lhqarr4[0][i])
+				}
+			}
+			$('.lhqpig').text(lhqarr5.length)
 		}
 	});
 	
+	
+
 	var lhqsb = sessionStorage.level;
 	console.log(lhqsb)
 	
-	if(lhqsb==1){
+	if(lhqsb==0){
 		$('.lhqdsh').css('display','none')
 	}
 	
