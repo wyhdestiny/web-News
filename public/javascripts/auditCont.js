@@ -5,7 +5,7 @@ window.addEventListener("load",function(){
 	$("#yesPass").click(function(){
 //		alert("0000")
 		tankuang();
-		$(".txt_yu").html("恭喜，审核已通过！")
+		$(".txt_yu").html("亲，确定审核通过？")
 		$(".zhj_button").click(function(){
 			$('.shower').css('opacity','1');
 			$('.shdon').css('display','none');
@@ -16,6 +16,18 @@ window.addEventListener("load",function(){
 			$('.shower i').css('color','white');
 			$('.shower').css('opacity','0');
 			$('.shower').css('top','0');
+			$.ajax({
+				type:"post",
+				url:"http://192.168.43.4:3000/newlist/audit",
+				async:true,
+				data:{
+					newid: sessionStorage.newid,
+					audit: sessionStorage.audit
+				},
+				success:function(e){
+					console.log(e);
+				}
+			})
 		})
 	})
 //审核不通过
