@@ -226,18 +226,14 @@ window.addEventListener('load',function(){
 				category:id
 			},
 	        success: function(data) {	
-	        	sessionStorage.uid=id;
-//	        	console.log(sessionStorage.uid);
+	        	sessionStorage.categoryId=id;
+	        	console.log(sessionStorage.categoryId);
 	        	arr = data.list;
-	        	console.log(data)
+//	        	console.log(data)
 	        	if(data.success == 2){
 	        		console.log('内容为空')
 	        	}else if(data.success == 1){
-	        		console.log("有内容哦！")
-	        	}
-	        	
-	        	
-	        for(var i=0;i<data.list.length;i++){
+	        		   for(var i=0;i<data.list.length;i++){
 	        	if(data.list[i].category == 1){
 //	        		console.log('1')
 	        	$(".zhj_headerCet").text('HTML')
@@ -255,12 +251,18 @@ window.addEventListener('load',function(){
 	        	}else{
 	        		$(".zhj_headerCet").text('Others')
 	        	}
-	        }
+	       		 }
  	
+	        		console.log("有内容哦！")
+	        		if(data.list.length > 0){	        	       
+						Fnlist(start) 		        		        	
+	          		}
+	        	}
 	        	
-	        if(data.list.length > 0){	        	       
-				Fnlist(start) 		        		        	
-	          }
+	        	
+	     
+	        	
+	        
 	        }
 	
 	   })
