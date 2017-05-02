@@ -11,12 +11,31 @@ window.addEventListener("load",function(){
 			newid:id
 		},
 		success:function(e){
-			console.log(e.data[0]);
-			console.log(e.data[0].clicks);
-			html+='<div class="txt_tit">'+e.data[0].title+'</div><div class="yu_autor">文&nbsp;/&nbsp;F.S菲茨杰拉德</div><div class="yu_cont" > '+e.data[0].content+'</div>'
+			console.log(e);
+//			console.log(e.data[0].clicks);
+			$.ajax({
+				type:"get",
+				url:"http://192.168.43.4:3000/user/change",
+				async:true,
+				data:{
+					uid:e.data[0].personid
+				},
+				success:function(data){
+					console.log(data);
+					html+='<div class="txt_tit">'+e.data[0].title+'</div><div class="yu_autor">文&nbsp;/&nbsp;'+data.data[0].username+'</div><div class="yu_cont" > '+e.data[0].content+'</div>'
 			$(".yu_debody").append(html);
 			$(".readed").html(e.data[0].clicks+'人已读');
 			$(".yu_time").html(e.data[0].time);
+				}
+			});
+			
+			
+			
+			
+//			html+='<div class="txt_tit">'+e.data[0].title+'</div><div class="yu_autor">文&nbsp;/&nbsp;F.S菲茨杰拉德</div><div class="yu_cont" > '+e.data[0].content+'</div>'
+//			$(".yu_debody").append(html);
+//			$(".readed").html(e.data[0].clicks+'人已读');
+//			$(".yu_time").html(e.data[0].time);
 			//点击收藏
 			var off=true;
 			$("#collect").click(function(){

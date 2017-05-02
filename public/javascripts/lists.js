@@ -201,7 +201,7 @@ window.addEventListener('load',function(){
 				i=0;
 				$('#auto ul li').eq(i).fadeIn(300).siblings().fadeOut(300);
 			}
-			setInterval(auto,3000);
+			setInterval(auto,2000);
 							
 //返回上一级
 	$(".zhj_head_left").click(function(){
@@ -226,10 +226,10 @@ window.addEventListener('load',function(){
 				category:id
 			},
 	        success: function(data) {	
-	        	sessionStorage.uid=id;
-//	        	console.log(sessionStorage.uid);
+	        	sessionStorage.categoryId=id;
+	        	console.log(sessionStorage.categoryId);
 	        	arr = data.list;
-	        	console.log(data)
+//	        	console.log(data)
 	        	if(data.success == 2){
 	        		console.log('内容为空');
       		    $('.shdon').css('opacity','1');
@@ -275,6 +275,7 @@ window.addEventListener('load',function(){
 	        	
 	 
 	        for(var i=0;i<data.list.length;i++){
+	        		   for(var i=0;i<data.list.length;i++){
 	        	if(data.list[i].category == 1){
 //	        		console.log('1')
 	        	$(".zhj_headerCet").text('HTML')
@@ -292,18 +293,16 @@ window.addEventListener('load',function(){
 	        	}else{
 	        		$(".zhj_headerCet").text('Others')
 	        	}
-	        }
+	       		 }
  	
-	        	
-	        if(data.list.length > 0){	        	       
-				Fnlist(start) 		        		        	
-	          }
-	        }
-	
+	        		console.log("有内容哦！")
+	        		if(data.list.length > 0){	        	       
+						Fnlist(start) 		        		        	
+	          		}
+	        	}	       	        	     	        		        
+	        }	
 	   })
-	
-	
-	
+			
 	var start=0;
 	window.addEventListener('scroll',function(){
         
