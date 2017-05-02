@@ -306,8 +306,17 @@ body{
 }
 
 .wyh_tingshi p{
-	line-height:28rem;
+	line-height:23rem;
 	color:white;
 	text-align: center;
 	font-size: 1rem;
+}
+.yuhan_sure{
+	width:3rem;
+	height:1.7rem;
+	font-size: 0.81rem;
+	position: fixed;
+	display: none;
+	top:50%;
+	left:40%;
 }

@@ -87,14 +87,15 @@
 .lhq-center>a{
 	width: 94%;
 	height: 1.7rem;
-	 background: -webkit-linear-gradient(left,#545659, #BCBDBE);
+	 /*background: -webkit-linear-gradient(left,#545659, #BCBDBE);
  	 background: -o-linear-gradient(left,#545659, #BCBDBE);
  	 background: -moz-linear-gradient(left,#545659,#BCBDBE);
- 	 background: linear-gradient(left,#545659, #BCBDBE);
+ 	 background: linear-gradient(left,#545659, #BCBDBE);*/
+ 	background: rgba(255,255,255,0.7);
 	display: block;
 	margin: 0 auto;
 	text-decoration: none;
-	color: #FFFFFF;
+	color:rgba(0,0,0,0.6)
 	border-radius:0.5rem;
 	margin-top: 0.5rem;
 	
