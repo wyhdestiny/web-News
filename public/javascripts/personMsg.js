@@ -18,6 +18,7 @@ window.addEventListener("load",function(){
 		sessionStorage.setItem("uid", '');
 		sessionStorage.setItem("img", '');
 	})
+	
 
 
 //获取个人信息
@@ -47,6 +48,7 @@ var lhqarr5 = [];
 				}
 			}
 			
+			
 			$('.lhqff').text(lhqarr2.length)
 			
 			var lhqqq = data.data[0].collect;
@@ -65,11 +67,20 @@ var lhqarr5 = [];
 			lhqarr4.push(lhqarr3.unique())
 			console.log(lhqarr4)
 			for(var i = 0;i<lhqarr4[0].length;i++){
-				if(lhqarr4[0][i]!='null'){
+				if(lhqarr4[0][i]!='null' && lhqarr4[0][i]!=''){
 					lhqarr5.push(lhqarr4[0][i])
 				}
 			}
-			$('.lhqpig').text(lhqarr5.length)
+			$('.lhqpig').text(lhqarr5.length);
+			
+			$(".yu_fang").click(function(){
+				sessionStorage.arrfb=lhqarr2;
+				location.href="collect.html?fb";
+			})
+			$(".yu_shou").click(function(){
+				sessionStorage.arrsc=lhqarr5;
+				location.href="collect.html?sc";
+			})
 		}
 	});
 	
