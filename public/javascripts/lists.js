@@ -201,7 +201,7 @@ window.addEventListener('load',function(){
 				i=0;
 				$('#auto ul li').eq(i).fadeIn(300).siblings().fadeOut(300);
 			}
-			setInterval(auto,3000);
+			setInterval(auto,2000);
 							
 //返回上一级
 	$(".zhj_head_left").click(function(){
@@ -257,18 +257,10 @@ window.addEventListener('load',function(){
 	        		if(data.list.length > 0){	        	       
 						Fnlist(start) 		        		        	
 	          		}
-	        	}
-	        	
-	        	
-	     
-	        	
-	        
-	        }
-	
+	        	}	       	        	     	        		        
+	        }	
 	   })
-	
-	
-	
+			
 	var start=0;
 	window.addEventListener('scroll',function(){
         

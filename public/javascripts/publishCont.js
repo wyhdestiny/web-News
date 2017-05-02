@@ -7,7 +7,7 @@ window.addEventListener('load', function() {
 	var lhqnum = '';
 	$('.lhq-zhezhao-box').delegate('p', 'click', function() {
 		lhqnum = $(this).text();
-		$(this).css('color', '#000000').siblings().css('color', '#ffffff');
+		$(this).css('color', '#000000').siblings().css('color', '#000000');
 		$(this).css('font-size', '0.9rem').siblings().css('font-size', '0.7rem');
 	})
 	$('.lhqxuan').on('click', function() {

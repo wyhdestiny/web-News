@@ -5,8 +5,9 @@ window.addEventListener('load',function(){
 			url: 'http://192.168.43.4:3000/newlist/audit',
 			async: true,
 	        success: function(data) {
-	         console.log(data)
-	         
+	         console.log(data.data.length)
+	         sessionStorage.auditLenght=data.data.length
+//	         console.log(sessionStorage.auditLenght)
 //	         if(data.data[i].category == 1){
 //	         	
 //	         }

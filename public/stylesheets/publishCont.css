@@ -156,7 +156,9 @@
 	text-align: center;
 	margin-top: rem;
 	margin-left: 65%;
-	box-shadow: 0px 0px 5px 2px #000000 inset;
+	border: 1px solid wheat;
+	background: rgba(0,0,0,0.7);
+	color: white;
 	display: block;
 }
 
