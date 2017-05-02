@@ -5,7 +5,7 @@ window.addEventListener('load',function(){
 
     
 	$(".zhj_head_left").click(function(){
-		location.href="lists.html?"+sessionStorage.uid;
+		location.href="lists.html?"+sessionStorage.categoryId;
 	})	
 		
 	
@@ -13,8 +13,13 @@ window.addEventListener('load',function(){
 	
 	$('.btn')[0].addEventListener('touchstart',function(){
 		if($(".textv").val()==''){
+			$(".zhj_contents").css("display","none");
+			$(".zhj_null").css("display","block");
+			
 			  return;
 		}else{
+			$(".zhj_null").css("display","none");
+			$(".zhj_contents").css("display","block");
 			var Sval = $(".textv").val();
 		
 		$.ajax({
@@ -29,16 +34,18 @@ window.addEventListener('load',function(){
 				console.log(data.data.length);
 				var html=''
 				if(data.data.length>0){
-//					alert(1)
+                    console.log(data);
+                    console.log("有数据可显示哦！数据一共"+data.data.length+"条");
 					for(var i=0;i<data.data.length;i++){
 						html+='<div class="zhj_biaoti"><h3>'+data.data[i].title+'</h3><div class="zhj_text">'+data.data[i].content+'</div><div class="zhj_btn"><div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div><div class="zhj_xie">/</div><div class="upName"><span>发布时间：</span><span>'+data.data[i].time+'</span></div></div></div>'										
 					}
 					$('.zhj_contents').append(html);
 					$(".zhj_biaoti").css('display','block');
 					$(".zhj_null").css('display','none');
-			 	}else{
+			 }else{			 		
 			 		$(".zhj_biaoti").css('display','none');
-					$(".zhj_null").css('display','block');					
+					$(".zhj_null").css('display','block');	
+					console.log("没有数据可显示！");
 				}
 			}
 		})
