@@ -241,8 +241,10 @@
 }
 .shower p:nth-child(3){
 	position: absolute;
+	width: 100%;
+	height: auto;
 	top: 3.6rem;
-	right: 4rem;
+	right:-1.4rem;
 	font-size: 1rem;
 }
 .zhj_button{
