@@ -92,7 +92,7 @@ function getListG(clicks, newid, callback) {
 }
 router.post('/clicks', function(request, response) {
 	console.log("列表点击量进入成功》》》》》")
-	var newid = Number(request.body.newid);
+	var newid = request.body.newid;
 
 	getListS(newid, function(err, result) {
 		var clicks = result[0].clicks;

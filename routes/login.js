@@ -166,12 +166,9 @@ router.get('/change', function(request, response) {
 	var id = request.query.uid;
 
 	getUserG(id, function(err, result) {
-		console.log("result:" + result)
-		if(result.length > 0) {
-			response.send({
-					success: 1,
-					data: result
-				}) //用户存在
+		console.log("result:" + result[0].username)
+		if(result) {
+			response.send({success: 1,data: result})
 		} else if(err) {
 			response.send({
 					err: err
@@ -266,7 +263,7 @@ router.post('/publish', function(request, response) {
 		title = request.body.title,
 		content = request.body.content,
 		time = request.body.time,
-		personid = Number(request.body.personid),
+		personid = request.body.personid,
 		clicks = 0,
 		audit = 0;
 
