@@ -231,12 +231,49 @@ window.addEventListener('load',function(){
 	        	arr = data.list;
 	        	console.log(data)
 	        	if(data.success == 2){
-	        		console.log('内容为空')
+	        		console.log('内容为空');
+      		    $('.shdon').css('opacity','1');
+				$('.shower').css('opacity','1');
+				$('.shower').css('transition','all 0.6s');
+				$('.shower').css('transform','translateY(200%)');
+				$('.shower').css('background','rgba(255,255,255,1)');
+				$('.shower').css('color','black');
+				$('.shower i').css('color','black');
+				$('.shower').css('opacity','0.8');	
+                    
+                    
+            $(".shower i").click(function(){
+				$('.shdon').css('opacity','0');
+				$('.shower').css('opacity','1');
+				$('.shower').css('transition','all 0.6s');
+				$('.shower').css('transform','translateY(300%)');
+				$('.shower').css('background','rgba(0,0,0,0.8)');
+				$('.shower').css('color','white');
+				$('.shower i').css('color','white');
+				$('.shower').css('opacity','0');
+			})		        
+                    
+                    
+            $(".zhj_button").click(function(){
+				$('.shdon').css('opacity','0');
+//				$('.shower').css('opacity','1');
+				$('.shower').css('transition','all 0.6s');
+				$('.shower').css('transform','translateY(300%)');
+				$('.shower').css('background','rgba(0,0,0,0.8)');
+				$('.shower').css('color','white');
+				$('.shower i').css('color','white');
+				$('.shower').css('opacity','0');
+				location.href='firstPage.html';
+			})        
+                    
+                    
 	        	}else if(data.success == 1){
 	        		console.log("有内容哦！")
 	        	}
 	        	
+	       
 	        	
+	 
 	        for(var i=0;i<data.list.length;i++){
 	        	if(data.list[i].category == 1){
 //	        		console.log('1')
