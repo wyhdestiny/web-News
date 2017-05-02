@@ -32,7 +32,7 @@ var lhqarr5 = [];
 		url:"http://192.168.43.4:3000/user/change",
 		async:true,
 		data:{
-			uid:sessionStorage.uid
+			uid:sessionStorage.categoryId
 		},
 		success:function(data){
 			console.log(data)
@@ -42,7 +42,8 @@ var lhqarr5 = [];
 			
 			
 			var lhqsss = data.data[0].releases;
-			lhqarr=lhqsss.split('-');
+			console.log(lhqsss)
+//			lhqarr=lhqsss.split('-');
 			for(var i = 0; i<lhqarr.length;i++){
 				if(lhqarr[i]!='null'){
 					lhqarr2.push(lhqarr[i])
@@ -72,7 +73,6 @@ var lhqarr5 = [];
 					lhqarr5.push(lhqarr4[0][i])
 				}
 			}
-<<<<<<< HEAD
 			$('.lhqpig').text(lhqarr5.length);
 			
 			$(".yu_fang").click(function(){
@@ -83,10 +83,8 @@ var lhqarr5 = [];
 				sessionStorage.arrsc=lhqarr5;
 				location.href="collect.html?sc";
 			})
-=======
 			$('.lhqpig').text(lhqarr5.length)
-			$(".dsh").text(sessionStorage.auditLenght)
->>>>>>> origin/master
+//			$(".dsh").text(sessionStorage.auditLenght)
 		}
 	});
 	

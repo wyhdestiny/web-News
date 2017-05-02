@@ -323,7 +323,7 @@ window.addEventListener('load',function(){
 							
 	var html='';
 	
-	console.log(id)
+//	console.log(id)
 	
 	var djsName;
 	 function Fnlist(start){
