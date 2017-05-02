@@ -42,6 +42,7 @@ var lhqarr5 = [];
 			
 			
 			var lhqsss = data.data[0].releases;
+			console.log(lhqsss)
 			lhqarr=lhqsss.split('-');
 			for(var i = 0; i<lhqarr.length;i++){
 				if(lhqarr[i]!='null'){
@@ -72,7 +73,6 @@ var lhqarr5 = [];
 					lhqarr5.push(lhqarr4[0][i])
 				}
 			}
-<<<<<<< HEAD
 			$('.lhqpig').text(lhqarr5.length);
 			
 			$(".yu_fang").click(function(){
@@ -83,10 +83,6 @@ var lhqarr5 = [];
 				sessionStorage.arrsc=lhqarr5;
 				location.href="collect.html?sc";
 			})
-=======
-			$('.lhqpig').text(lhqarr5.length)
-			$(".dsh").text(sessionStorage.auditLenght)
->>>>>>> origin/master
 		}
 	});
 	

@@ -93,6 +93,7 @@ function getListG(clicks, newid, callback) {
 router.post('/clicks', function(request, response) {
 	console.log("列表点击量进入成功》》》》》")
 	var newid = request.body.newid;
+	console.log(newid)
 
 	getListS(newid, function(err, result) {
 		var clicks = result[0].clicks;
@@ -116,7 +117,6 @@ router.post('/clicks', function(request, response) {
 			response.send({success: 3}) //数据获取错误
 		}
 	})
-
 })
 
 //模糊搜索

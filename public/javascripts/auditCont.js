@@ -2,7 +2,6 @@ window.addEventListener("load",function(){
 	
 	var html='';
 	var str=location.href.split("?")[1];
-//	function aa(){
 		$.ajax({
 			type:"post",
 			url:"http://192.168.43.4:3000/newlist/clicks",
@@ -12,7 +11,6 @@ window.addEventListener("load",function(){
 			},
 			success:function(e){
 				console.log(e);
-	//			console.log(e.data[0].personid);
 				$.ajax({
 					type:"get",
 					url:"http://192.168.43.4:3000/user/change",
@@ -30,14 +28,12 @@ window.addEventListener("load",function(){
 				
 			}
 		})
-//	}
 	
 	
 	
 	
 //审核通过
 	$("#yesPass").click(function(){
-//		alert("0000")
 		tankuang();
 		$(".txt_yu").html("亲，确定审核通过？")
 		$(".zhj_button").click(function(){
@@ -60,14 +56,12 @@ window.addEventListener("load",function(){
 				},
 				success:function(e){
 					console.log(e);
-//					aa()
 				}
 			})
 		})
 	})
 //审核不通过
 	$("#noPass").click(function(){
-//		alert("0000")
 		tankuang();
 		$(".txt_yu").html("确定审核不通过？")
 		$(".zhj_button").click(function(){
@@ -80,6 +74,18 @@ window.addEventListener("load",function(){
 			$('.shower i').css('color','white');
 			$('.shower').css('opacity','0');
 			$('.shower').css('top','0');
+			$.ajax({
+				type:"post",
+				url:"http://192.168.43.4:3000/newlist/audit",
+				async:true,
+				data:{
+					newid: str,
+					audit:2				
+				},
+				success:function(e){
+					console.log(e);
+				}
+			})
 		})
 	})
 
@@ -98,7 +104,7 @@ window.addEventListener("load",function(){
 		$('.shower').css('opacity','0.8');
 	}
 
-//注册点击取消	
+//弹框点击取消	
 	function quxiao(){
 		$(".shower i").click(function(){
 			$('.shdon').css('opacity','1');
