@@ -40,15 +40,12 @@ window.addEventListener("load", function() {
 
 			var lhqsss = data.data[0].releases;
 			console.log(lhqsss)
-
-			$(".yu_fang").click(function() {
-				if(lhqsss != null) {
-					lhqarr = lhqsss.split('-');
-				} else {
+			if(lhqsss == null) {
 					$('.yu_fang').attr('href', 'javascript:;')
+				} else {
+					lhqarr = lhqsss.split('-');
+					sessionStorage.arrfb = lhqarr2;
 				}
-				sessionStorage.arrfb = lhqarr2;
-			})
 
 			for(var i = 0; i < lhqarr.length; i++) {
 				if(lhqarr[i] != 'null') {
@@ -61,14 +58,13 @@ window.addEventListener("load", function() {
 			var lhqqq = data.data[0].collect;
 			console.log(lhqqq)
 
-			$(".yu_shou").click(function() {
-				if(lhqqq != null) {
-					lhqarr3 = lhqqq.split('-')
-				} else {
+				if(lhqqq == null) {
 					$('.yu_shou').attr('href', 'javascript:;')
+				} else {
+					lhqarr3 = lhqqq.split('-')
+					sessionStorage.arrsc = lhqarr5;
 				}
-				sessionStorage.arrsc = lhqarr5;
-			})
+
 
 			Array.prototype.unique = function() {
 				this.sort();

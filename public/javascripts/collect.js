@@ -8,10 +8,7 @@ window.addEventListener('load',function(){
 		$('.lhq-touxx').text('我的收藏');
 		var arr=sessionStorage.arrsc.split(",");
 		console.log(arr)
-	}
-	
-	
-	
+	}	
 	var i=0;
 	$(".lhq-list").children().remove()
 	eadt();
@@ -49,7 +46,6 @@ window.addEventListener('load',function(){
 			}else if(data.data[0].audit =='2'){
 				llqqq = '未通过'
 			}
-
 				var html="";
 				html+='<a href="lhq.html?'+data.data[0].newid+'"'+data.data[0].newid+'"><p><i>'+data.data[0].title+'</i></p><p><i>'+data.data[0].content+'</i></p><p><span>类型</span><i>'+lll+'</i><span>时间</span><span>'+data.data[0].time+'</span><span>'+llqqq+'</span></p>';
 				$(".lhq-list").append(html)

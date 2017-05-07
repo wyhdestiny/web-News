@@ -7,7 +7,7 @@ window.addEventListener('load',function(){
 			async: true,
 	        success: function(data){
 	         console.log(data.data)
-			lhqarr = data.data
+			lhqarr = data.data;
 	         for(var i=0;i<data.data.length;i++){
 	         	if(data.data[i].category == '1') {
 				lll = 'Html'
@@ -24,29 +24,17 @@ window.addEventListener('load',function(){
 			} else if(data.data[i].category == '7') {
 				lll = '其它'
 			}
-			
-			$.ajax({
-					type:"get",
-					url:"http://192.168.43.4:3000/user/change",
-					async:true,
-					data:{
-						uid:data.data[i].personid
-					},
-					success:function(e){
-						console.log(e);
-					}
-			})
-	         	 
-	        	
+	         	  		html+='<a href="auditCont.html?'+data.data[i].newid+'"><p><i>'+data.data[i].title+'</i></p><p><i>'+data.data[i].content+'</i></p><p><span>类型：</span><i>'+lll+'</i><span>时间</span><span>'+data.data[i].time+'</span></p>'
+	   
+	        
+	     }
+	         	
 	         $(".lhq-list").append(html)
 	         console.log(data.data[0].category);
-	     }
 	   }
 	})
 	
-	function lhq(){
-		html+='<a href="auditCont.html?'+data.data[i].newid+'"><p><i>'+data.data[i].title+'</i></p><p><i>'+data.data[i].content+'</i></p><p><span>类型：</span><i>'+lll+'</i><span>时间</span><span>'+data.data[i].time+'</span></p>'
-	         	 
-	         
-	}
+
+      	 
+
 },false);
