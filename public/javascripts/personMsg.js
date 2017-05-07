@@ -48,7 +48,7 @@ window.addEventListener("load", function() {
 				}
 
 			for(var i = 0; i < lhqarr.length; i++) {
-				if(lhqarr[i] != 'null') {
+				if(lhqarr[i] !="null") {
 					lhqarr2.push(lhqarr[i])
 				}
 			}
@@ -60,13 +60,11 @@ window.addEventListener("load", function() {
 
 				if(lhqqq == null) {
 					$('.yu_shou').attr('href', 'javascript:;')
+					$('.lhqpig').text('0');
+					
 				} else {
 					lhqarr3 = lhqqq.split('-')
-					
-				}
-
-
-			Array.prototype.unique = function() {
+						Array.prototype.unique = function() {
 				this.sort();
 				var res = [this[0]];
 				for(var i = 1; i < this.length; i++) {
@@ -79,15 +77,26 @@ window.addEventListener("load", function() {
 			lhqarr4.push(lhqarr3.unique())
 			console.log(lhqarr4)
 			for(var i = 0; i < lhqarr4[0].length; i++) {
-				if(lhqarr4[0][i] != null && lhqarr4[0][i] != '') {
+				console.log(lhqarr4[0][i])
+				if(lhqarr4[0][i] == "null" || lhqarr4[0][i] == ' '||lhqarr4[0][i] == 'undefined') {
+					return
+				}else{
 					lhqarr5.push(lhqarr4[0][i])
+//					alert(lhqarr5)
+					sessionStorage.arrsc = lhqarr5;
+					console.log(lhqarr5)
+					$('.lhqpig').text(lhqarr5.length);
+			
 				}
 			}
-			sessionStorage.arrsc = lhqarr5;
-			$('.lhqpig').text(lhqarr5.length);
+				}
 
+
+		
+			
 		}
 	});
+		
 
 	var lhqsb = sessionStorage.level;
 	console.log(lhqsb)

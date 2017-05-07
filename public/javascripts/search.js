@@ -37,7 +37,7 @@ window.addEventListener('load',function(){
                     console.log(data);
                     console.log("有数据可显示哦！数据一共"+data.data.length+"条");
 					for(var i=0;i<data.data.length;i++){
-						html+='<div class="zhj_biaoti"><h3>'+data.data[i].title+'</h3><div class="zhj_text">'+data.data[i].content+'</div><div class="zhj_btn"><div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div><div class="zhj_xie">/</div><div class="upName"><span>发布时间：</span><span>'+data.data[i].time+'</span></div></div></div>'										
+						html+='<div class="zhj_biaoti"><a href="details.html?id'+data.data[i].newid+'"><h3>'+data.data[i].title+'</h3><div class="zhj_text">'+data.data[i].content+'</div><div class="zhj_btn"><div class="zhj_fbr"><span>发布人：</span><span>阿曾</span></div><div class="zhj_xie">/</div><div class="upName"><span>发布时间：</span><span>'+data.data[i].time+'</span></div></div></a></div>'										
 					}
 					$('.zhj_contents').append(html);
 					$(".zhj_biaoti").css('display','block');
