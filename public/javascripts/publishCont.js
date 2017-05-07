@@ -55,9 +55,7 @@ window.addEventListener('load', function() {
 				var mydate = new Date();
 				var str = "" + mydate.getFullYear() + "/";
 				str += (mydate.getMonth() + 1) + "/";
-				str += mydate.getDate() + "/";
-				str +=mydate.getHours() +":";
-				str +=mydate.getMinutes()
+				str += mydate.getDate();
 				return str;
 			}
 			var lhqtime = show()

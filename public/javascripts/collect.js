@@ -25,10 +25,33 @@ window.addEventListener('load',function(){
 				newid:arr[i]
 			},
 			success:function(data){
-				
 				console.log(data)
+				
+			if(data.data[0].category == '1') {
+				lll = 'Html'
+			} else if(data.data[0].category == '5') {
+				lll = 'Angular'
+			} else if(data.data[0].category == '4') {
+				lll = 'Jquery'
+			} else if(data.data[0].category == '2') {
+				lll = 'Css'
+			} else if(data.data[0].category =='6') {
+				lll = 'Node/Php'
+			} else if(data.data[0].category =='3' ) {
+				lll = 'Js'
+			} else if(data.data[0].category == '7') {
+				lll = '其它'
+			}
+			if(data.data[0].audit =='0'){
+				llqqq = '未审核'
+			}else if(data.data[0].audit =='1'){
+				llqqq = '审核通过'
+			}else if(data.data[0].audit =='2'){
+				llqqq = '未通过'
+			}
+
 				var html="";
-				html+='<a href="auditCont.html'+data.data[0].newid+'"><p><i>'+data.data[0].title+'</i></p><p><i>'+data.data[0].content+'</i></p><p><span>类型：</span><i>css</i><span>发布时间</span><span>'+data.data[0].time+'</span></p>';
+				html+='<a href="lhq.html?'+data.data[0].newid+'"'+data.data[0].newid+'"><p><i>'+data.data[0].title+'</i></p><p><i>'+data.data[0].content+'</i></p><p><span>类型</span><i>'+lll+'</i><span>时间</span><span>'+data.data[0].time+'</span><span>'+llqqq+'</span></p>';
 				$(".lhq-list").append(html)
 				i++;
 				eadt()
