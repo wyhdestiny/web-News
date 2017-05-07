@@ -196,6 +196,8 @@ window.addEventListener('load',function(){
     var i=0;
     var arr=[];
 	var start=0;
+	
+	
 	function auto(){
 				i++;
 				if(i>3)
