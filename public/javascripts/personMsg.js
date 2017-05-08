@@ -32,7 +32,7 @@ var lhqarr5 = [];
 		url:"http://192.168.43.4:3000/user/change",
 		async:true,
 		data:{
-			uid:sessionStorage.categoryId
+			uid:sessionStorage.uid
 		},
 		success:function(data){
 			console.log(data)
@@ -43,11 +43,7 @@ var lhqarr5 = [];
 			
 			var lhqsss = data.data[0].releases;
 			console.log(lhqsss)
-<<<<<<< HEAD
 			lhqarr=lhqsss.split('-');
-=======
-//			lhqarr=lhqsss.split('-');
->>>>>>> origin/master
 			for(var i = 0; i<lhqarr.length;i++){
 				if(lhqarr[i]!='null'){
 					lhqarr2.push(lhqarr[i])
