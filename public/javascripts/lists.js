@@ -194,7 +194,10 @@ window.addEventListener('load',function(){
 //	};
 //	
     var i=0;
-    
+    var arr=[];
+	var start=0;
+	
+	
 	function auto(){
 				i++;
 				if(i>3)
@@ -216,8 +219,8 @@ window.addEventListener('load',function(){
 	$(".zhj_fbr").click(function(){
 		location.href="publisher.html";
 	})	
-	
 	var id =  location.href.split('?')[1];
+	console.log(id)
 	$.ajax({
 			type: "get",
 			url: 'http://192.168.43.4:3000/newlist/list',
@@ -229,7 +232,7 @@ window.addEventListener('load',function(){
 	        	sessionStorage.categoryId=id;
 	        	console.log(sessionStorage.categoryId);
 	        	arr = data.list;
-//	        	console.log(data)
+	        	console.log(data.list)
 	        	if(data.success == 2){
 	        		console.log('内容为空');
       		    $('.shdon').css('opacity','1');
@@ -302,8 +305,7 @@ window.addEventListener('load',function(){
 	        	}	       	        	     	        		        
 	        }	
 	   })
-			
-	var start=0;
+
 	window.addEventListener('scroll',function(){
         
 		if($(document).scrollTop() == ($(document).height()-jQuery(window).height())){
@@ -322,7 +324,6 @@ window.addEventListener('load',function(){
 	
 							
 	var html='';
-	
 //	console.log(id)
 	
 	var djsName;
@@ -334,7 +335,7 @@ window.addEventListener('load',function(){
 				break;
 			}else {
 //				console.log(i)
-//				console.log(arr[i])
+				console.log(arr[i])
 				$.ajax({
 			type: "get",
 			url: 'http://192.168.43.4:3000/user/change',
@@ -342,11 +343,10 @@ window.addEventListener('load',function(){
 			data: {
 				uid: arr[i].personid
 			},
-	        success: function(data) {
+	        success: function(data){
 	          	djsName = data.data[0].username;
 	         	liebiao(djsName,start)
 	         	$(".zhj_conttens").append(html)	
-				
 				start++;
 	        }	          
 	     })
@@ -355,8 +355,6 @@ window.addEventListener('load',function(){
 	  }
 	         		
 	}
-	 
-	 
 	 function liebiao(djsName,start){
 	 	html='<div class="zhj_biaoti"><a href="details.html?id'+arr[start].newid+'"><h3>'+arr[start].title+'</h3><div class="zhj_text">'+arr[start].content+'</div><div class="zhj_btn"><div class="zhj_fbr"></a><a href="publisher.html?id'+arr[start].personid+'"><span>发布人：</span><span class="who">'+djsName+'</span></a></div><div class="upName"><span>发布时间：</span><span>'+arr[start].time+'</span></div></div></div>';
 	 	
