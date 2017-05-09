@@ -166,7 +166,6 @@ router.get('/change', function(request, response) {
 	var id = request.query.uid;
 
 	getUserG(id, function(err, result) {
-		console.log("result:" + result[0].username)
 		if(result) {
 			response.send({success: 1,data: result})
 		} else if(err) {

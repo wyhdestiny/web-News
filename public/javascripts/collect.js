@@ -53,9 +53,6 @@ window.addEventListener('load',function(){
 				eadt()
 			}
 		})
-		}
-		
-	}
-	
-	
+		}	
+	}	
 })

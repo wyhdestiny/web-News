@@ -26,11 +26,11 @@ window.addEventListener("load", function() {
 	var lhqarr4 = [];
 	var lhqarr5 = [];
 	$.ajax({
-		type: "get",
-		url: "http://192.168.43.4:3000/user/change",
-		async: true,
-		data: {
-			uid: sessionStorage.uid
+		type:"get",
+		url:"http://192.168.43.4:3000/user/change",
+		async:true,
+		data:{
+			uid:sessionStorage.uid
 		},
 		success: function(data) {
 			console.log(data)
@@ -40,15 +40,9 @@ window.addEventListener("load", function() {
 
 			var lhqsss = data.data[0].releases;
 			console.log(lhqsss)
-			if(lhqsss == null) {
-					$('.yu_fang').attr('href', 'javascript:;')
-				} else {
-					lhqarr = lhqsss.split('-');
-					
-				}
-
-			for(var i = 0; i < lhqarr.length; i++) {
-				if(lhqarr[i] !="null") {
+			lhqarr=lhqsss.split('-');
+			for(var i = 0; i<lhqarr.length;i++){
+				if(lhqarr[i]!='null'){
 					lhqarr2.push(lhqarr[i])
 				}
 			}
